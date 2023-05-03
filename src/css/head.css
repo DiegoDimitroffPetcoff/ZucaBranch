@@ -1,0 +1,34 @@
+
+#header{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.lenguajesHeaderContent{
+display: flex;
+flex-direction: row;
+justify-content: flex-end;
+margin: 5%;
+
+}
+
+.lenguajesHeader{
+    border-radius: 50%;
+    width: 8%;
+    margin: 2%;
+    object-fit: cover;
+  
+}
+
+.imgLogo{
+    border-radius: 100%;
+    width: 70%;
+    margin: 10%;
+}
+
+h1{
+ margin: 0 auto;
+}
