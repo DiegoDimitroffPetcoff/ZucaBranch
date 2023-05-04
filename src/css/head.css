@@ -1,3 +1,10 @@
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 90px;
+ 
+}
 
 #header{
     display: flex;
@@ -5,13 +12,14 @@
     align-content: center;
     justify-content: center;
     flex-wrap: wrap;
-    height: 500px;
+    width: 100%;
+ 
 }
 
 .lenguajesHeaderContent{
 display: flex;
 flex-direction: row;
-justify-content: flex-end;
+justify-content:center;
 
 
 }
@@ -28,7 +36,7 @@ justify-content: flex-end;
 
 .logo{
  font-family: 'Raleway', sans-serif;
- font-size: 70px;
+ font-size: 100px;
  font-weight: 100;
  display: flex;
  justify-content: center;
@@ -56,4 +64,14 @@ h1{
 
     margin: 0;
     letter-spacing: 3px;
+}
+
+.button{
+    background-color: transparent;
+    border: none;
+    font-family: 'Raleway', sans-serif;
+    color: white;
+
+    padding: 5%;
+
 }

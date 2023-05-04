@@ -8,7 +8,7 @@ import spainFlag from "../assests/imagen/spainFlag.png";
 export function Nav() {
   return (
     <ul>
-      <li>Quienes somos</li>
+      <li>Quien Soy</li>
       <li>Proyectos</li>
       <li> Contacto</li>
       <li className="lenguajesHeaderContent">

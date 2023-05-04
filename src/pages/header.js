@@ -20,19 +20,20 @@ export function Header() {
 
   return (
     <div>
-      <header >
-      <nav>
+          <nav>
         <button className="menuBottomn" onClick={toggleMenu}>
           {" "}
           <FaBars></FaBars>
         </button>
        <span id="nav"><Nav></Nav> </span>
         </nav>
+      <header >
+
         <div id="header">
           <div className="logo">ZUCA</div>
           <h1>ARCHVIZ</h1>
         </div>
-        <button>Comenzar</button>
+        <button className="button">Comenzar</button>
       </header>
     </div>
   );
