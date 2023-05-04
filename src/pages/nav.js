@@ -1,14 +1,23 @@
 import React from "react";
-import { Outlet, Link } from "react-router-dom";
+import '../css/nav.css'
+
+
+import englandFlag from "../assests/imagen/englandFlag.png";
+import spainFlag from "../assests/imagen/spainFlag.png";
 
 export function Nav() {
   return (
-    <div>
-      <header>
-        <h1>HOME</h1>
-      </header>
-    </div>
+    <ul>
+      <li>Quienes somos</li>
+      <li>Proyectos</li>
+      <li> Contacto</li>
+      <li className="lenguajesHeaderContent">
+          <img className="lenguajesHeader" src={englandFlag} alt="Logo" />
+          <img className="lenguajesHeader" src={spainFlag} alt="Logo" />
+        </li>
+    </ul>
   );
 }
+
 
 export default Nav;

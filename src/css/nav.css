@@ -1,0 +1,46 @@
+ul {
+  display: flex;
+  flex-direction: column;
+  align-items: self-end;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  height: 100vh;
+  backdrop-filter: blur(8px); /* Aplica el desenfoque en el fondo */
+
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 100%;
+  position: absolute;
+  max-height: 0;
+  transition-duration: 0.3s;
+}
+.menuBottomn {
+  background-color: transparent;
+  border: transparent;
+  color: white;
+  font-size: 50px;
+  padding: 5%;
+}
+
+li {
+  font-family: "Raleway", sans-serif;
+  color: white;
+  font-size: 30px;
+  padding: 20px;
+}
+
+.show {
+  visibility: visible;
+  transition: 0.3s;
+
+  opacity: 1;
+}

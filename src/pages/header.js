@@ -1,25 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 //import { Outlet, Link } from "react-router-dom";
-import Imagen from "../assests/imagen/logoZUCA.jpeg";
-import englandFlag from "../assests/imagen/englandFlag.png";
-import spainFlag from "../assests/imagen/spainFlag.png";
+import { FaBars } from "react-icons/fa";
 
 import "../css/head.css";
+import "../css/nav.css";
+import Nav from "./nav";
 
 export function Header() {
+  const [navIsOpen, setNavIsOpen] = useState(false);
+
+  function toggleMenu() {
+    setNavIsOpen(!navIsOpen);
+    const navElement = document.getElementsByTagName("ul")[0];
+    if (navElement) {
+      navElement.classList.toggle("show");
+    }
+  }
+  
+
   return (
     <div>
-      <header>
-      <div className="lenguajesHeaderContent">
-      <img className="lenguajesHeader" src={englandFlag} alt="Logo" />
-      <img className="lenguajesHeader" src={spainFlag} alt="Logo" />
-      </div>
-      <div id="header">
-        <img className="imgLogo" src={Imagen} alt="Logo" />
-        <h1>TITLE</h1>
+      <header >
+      <nav>
+        <button className="menuBottomn" onClick={toggleMenu}>
+          {" "}
+          <FaBars></FaBars>
+        </button>
+       <span id="nav"><Nav></Nav> </span>
+        </nav>
+        <div id="header">
+          <div className="logo">ZUCA</div>
+          <h1>ARCHVIZ</h1>
         </div>
+        <button>Comenzar</button>
       </header>
-      <div>QUIENES SOMOS / PROJECTOS / CONTACTO </div>
     </div>
   );
 }
