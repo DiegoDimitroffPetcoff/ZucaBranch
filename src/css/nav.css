@@ -1,47 +1,96 @@
-ul {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  border: none;
-  height: 100vh;
-  backdrop-filter: blur(8px); /* Aplica el desenfoque en el fondo */
-  visibility: hidden;
-  opacity: 0;
-  transition: 0.3s;
-}
-
 nav {
-
-  height: 90px;
   transition-duration: 0.3s;
   display: flex;
   flex-direction: column;
   width: 100%;
-
 }
-.menuBottomn {
-  background-color: transparent;
-  border: transparent;
-  color: white;
-  font-size: 50px;
-  padding: 5%;
+
+ul {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+
+ 
+  visibility: visible;
 }
 
 li {
   font-family: "Raleway", sans-serif;
   color: white;
-  font-size: 50px;
+  font-size: 30px;
   padding: 20px;
+  width: 20%;
+}
+
+.menuBottomn {
+  visibility: hidden;
+  width: 0;
+  height: 0;
 }
 
 .show {
-  visibility: visible;
-  transition: 0.3s;
-  opacity: 1;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    height: 90px;
+    transition-duration: 0.3s;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    height: 100vh;
+    backdrop-filter: blur(8px); /* Aplica el desenfoque en el fondo */
+    opacity: 0;
+    transition: 0.1s;
+  }
+
+  li {
+    font-family: "Raleway", sans-serif;
+    color: white;
+    font-size: 50px;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+  }
+  .menuBottomn {
+    background-color: transparent;
+    border: transparent;
+    color: white;
+    font-size: 50px;
+    padding: 4%;
+    width: auto;
+    height: 100%;
+    visibility: visible;
+
+    align-self: end;
+  }
+
+  .show {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    visibility: visible;
+    transition: 0.1s;
+    opacity: 1;
+  }
 }
