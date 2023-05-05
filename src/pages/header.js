@@ -19,7 +19,7 @@ export function Header() {
   
 
   return (
-    <div>
+    <div className="Main">
           <nav>
         <button className="menuBottomn" onClick={toggleMenu}>
           {" "}

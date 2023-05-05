@@ -11,6 +11,17 @@ body {
   overflow: auto;
 }
 
+#root{
+  height: 100vh;
+}
+.App{
+  height: 100vh;
+}
+
+.Main{
+  height: 100vh;
+}
+
 h1{
   font-size: 50px;
   color: #5A6E73
