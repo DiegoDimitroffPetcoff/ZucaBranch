@@ -87,7 +87,7 @@ li {
   .show {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     visibility: visible;
     transition: 0.1s;
