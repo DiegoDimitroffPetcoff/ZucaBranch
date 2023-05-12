@@ -1,10 +1,12 @@
-.containerProject{
-
-    margin: 1%;
+.containerProject {
+  margin: 1%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.imagenProject{
-    width: 50%;
-    border: solid 3px black;
-
+.imagenProject {
+  width: 50%;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
