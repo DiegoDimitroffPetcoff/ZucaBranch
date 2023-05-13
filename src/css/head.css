@@ -71,7 +71,7 @@ h1{
     border: none;
     font-family: 'Raleway', sans-serif;
     color: white;
-
+    text-decoration: none;
 
     cursor: pointer;
     width: auto;
@@ -85,3 +85,8 @@ transition: 0.5s;
 box-shadow:2px 2px 5px rgba(0, 0, 0, 0.3) ;
 
 }
+
+.button:visited{
+
+    
+    }

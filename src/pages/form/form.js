@@ -2,8 +2,12 @@ import React from "react";
 import { Formik } from "formik";
 import axios from "axios";
 import "../../css/login.css";
+import { Navigate } from "react-router-dom";
+
+
 
 const Form = () => (
+
   <div className="containerLogin">
     <h1>Subir Contenido /Proyecto</h1>
     <Formik
@@ -24,10 +28,8 @@ const Form = () => (
           }
         );
         let userData = response.data;
-        console.log("INFO ENVIADA");
-        console.log(JSON.stringify(values));
-        console.log("RESPUESTA DEL SERVIDOR");
-        console.log(JSON.stringify(userData));
+        let navigate = Navigate()
+ navigate('/projectlist')
       }}
     >
       {({
@@ -69,7 +71,8 @@ const Form = () => (
             onBlur={handleBlur}
           />
           {errors.file && touched.file && errors.file}
-          <button className="loginButton" type="submit" disabled={isSubmitting}>
+          <button className="loginButton" type="submit"  to="/projectlist"disabled={isSubmitting}>
+          
             Submit
           </button>
         </form>
