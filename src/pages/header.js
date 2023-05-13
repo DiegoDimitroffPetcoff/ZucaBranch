@@ -17,6 +17,8 @@ export function Header() {
           <h1>ARCHVIZ</h1>
         </div>    
         <Link to="/login/form" className="button">Comenzar</Link>
+
+   
       </header>
     </div>
   );
