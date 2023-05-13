@@ -1,22 +1,33 @@
-import React, { useDebugValue } from "react";
+import React from "react";
 import { Formik } from "formik";
 import axios from "axios";
-import '../../css/login.css'
+import "../../css/login.css";
 
 const Form = () => (
   <div className="containerLogin">
-    <h1>Login</h1>
+    <h1>Subir Contenido /Proyecto</h1>
     <Formik
-      initialValues={{ name: "", password: "", file: ""}}
+      initialValues={{ name: "", file: null, description: "" }}
       onSubmit={async (values, { setSubmitting }) => {
-        const response = await axios.post(`https://zucaarqback.onrender.com/project`, {
-          name: values.name,
-          password: values.password,
-          image: values.image
-        });
-        let userData = response.data
-         console.log(JSON.stringify(response.data))
-        console.log(JSON.stringify(userData))
+        const formData = new FormData();
+        formData.append("name", values.name);
+        formData.append("description", values.description);
+        formData.append("file", values.file);
+
+        const response = await axios.post(
+          `https://zucaarqback.onrender.com/project`,
+          formData,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          }
+        );
+        let userData = response.data;
+        console.log("INFO ENVIADA");
+        console.log(JSON.stringify(values));
+        console.log("RESPUESTA DEL SERVIDOR");
+        console.log(JSON.stringify(userData));
       }}
     >
       {({
@@ -27,31 +38,38 @@ const Form = () => (
         handleBlur,
         handleSubmit,
         isSubmitting,
-        /* and other goodies */
+        setFieldValue,
       }) => (
-        <form onSubmit={handleSubmit}>
+        <form encType="multipart/form-data" onSubmit={handleSubmit}>
           <input
-            type="name"
+            type="text"
             name="name"
             onChange={handleChange}
+            className="titleForm"
             onBlur={handleBlur}
+            value={values.name}
           />
 
           <input
-            type="description"
+            type="text"
             name="description"
             onChange={handleChange}
+            className="description"
             onBlur={handleBlur}
+            value={values.description}
           />
 
-<input
+          <input
             type="file"
             name="file"
-            onChange={handleChange}
+            className="fileButton"
+            onChange={(event) => {
+              setFieldValue("file", event.currentTarget.files[0]);
+            }}
             onBlur={handleBlur}
           />
-          {errors.password && touched.password && errors.password}
-          <button type="submit" disabled={isSubmitting}>
+          {errors.file && touched.file && errors.file}
+          <button className="loginButton" type="submit" disabled={isSubmitting}>
             Submit
           </button>
         </form>

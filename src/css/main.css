@@ -11,6 +11,8 @@ body {
   overflow: auto;
 }
 
+
+
 #root{
   height: 100vh;
 }
@@ -29,6 +31,8 @@ h1{
 
 p{
   font-size: 20px;
-  color: white
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  text-align: justify;
 }
 

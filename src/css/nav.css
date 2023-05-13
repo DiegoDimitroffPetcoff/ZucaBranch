@@ -15,17 +15,35 @@ ul {
   padding: 0;
   border: none;
 
- 
   visibility: visible;
+}
+
+li a {
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+li a:hover {
+  opacity: 0.5;
+  transition: 0.3s;
 }
 
 li {
   font-family: "Raleway", sans-serif;
   color: white;
-  font-size: 20px;
-  padding: 20px;
+  font-size: 25px;
+  padding:40px;
   width: 20%;
   text-align: center;
+  text-decoration: none;
+
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+a:visited {
+  text-decoration: none;
+  color: white;
 }
 
 .menuBottomn {

@@ -1,31 +1,64 @@
-.containerLogin{
+.containerLogin {
   display: flex;
   flex-direction: column;
   align-content: center;
   justify-content: center;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  margin: 20% 5%;
+  /* margin: 20% 5%; */
+  width: 100%;
+  height: 100vh;
 }
-form{
-
+form {
   display: flex;
   flex-direction: column;
-  width: 200px;
+  width: 100%;
   margin: 0 auto;
-
-
 }
 
-button{
+.loginButton {
   width: 100px;
   margin: 0 auto;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.fileButton{
+  width: 50%;
+  margin: 0 auto;
+
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+
+.titleForm {
+
+  margin: 0 auto;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.description {
+
+  height: 300px;
+  margin: 0 auto;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  overflow: overlay;
 }
 
 @media screen and (max-width: 768px) {
-  .containerLogin{
+  .containerLogin {
     display: flex;
     flex-direction: column;
     align-content: center;
     justify-content: center;
+  }
+  .titleForm {
+
+    margin: 0 auto;
+  }
+
+  .description {
+font-size: 10px;
+    height: 200px;
+    margin: 0 auto;
+
   }
 }
