@@ -18,7 +18,7 @@ const Form = () => (
         formData.append("description", values.description);
         formData.append("file", values.file);
 
-        const response = await axios.post(
+ await axios.post(
           `https://zucaarqback.onrender.com/project`,
           formData,
           {
@@ -27,7 +27,7 @@ const Form = () => (
             },
           }
         );
-        let userData = response.data;
+
         let navigate = Navigate()
  navigate('/projectlist')
       }}

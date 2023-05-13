@@ -1,6 +1,3 @@
-import React, { useState } from "react";
-//import { Outlet, Link } from "react-router-dom";
-import { FaBars } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 import "../css/head.css";
@@ -15,10 +12,10 @@ export function Header() {
         <div id="header">
           <div className="logo">ZUCA</div>
           <h1>ARCHVIZ</h1>
-        </div>    
-        <Link to="/login/form" className="button">Comenzar</Link>
-
-   
+        </div>
+        <Link to="/login/form" className="button">
+          Comenzar
+        </Link>
       </header>
     </div>
   );

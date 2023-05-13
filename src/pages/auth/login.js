@@ -1,4 +1,4 @@
-import React, { useDebugValue } from "react";
+
 import { Formik } from "formik";
 import axios from "axios";
 import "../../css/login.css";
@@ -9,11 +9,11 @@ const Login = () => (
     <Formik
       initialValues={{ name: "", password: "" }}
       onSubmit={async (values, { setSubmitting }) => {
-        const response = await axios.post(`http://localhost:3000/login/`, {
+   await axios.post(`http://localhost:3000/login/`, {
           username: values.name,
           password: values.password,
         });
-        let userData = response.data;
+
       }}
     >
       {({
