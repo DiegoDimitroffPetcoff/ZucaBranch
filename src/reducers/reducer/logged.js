@@ -1,11 +1,14 @@
-const loggedAction = (state = false, action) => {
+
+export const loggedAction = (state = false, action) => {
   switch (action.type) {
     case 'SIGN_IN':
-      return !state;
-    default: return state ;
+      return true;
+    case 'LOG_OUT':
+      return false;
+    default:
+      return state;
   }
-}
+};
 
 
 
-export default loggedAction;

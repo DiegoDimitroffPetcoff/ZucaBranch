@@ -1,11 +1,20 @@
 import { Formik } from "formik";
 import axios from "axios";
 import "../../css/login.css";
+
 import { useSelector, useDispatch } from "react-redux";
 import { LOGEARSE } from "../../reducers/actions";
+
+import Cookies from "js-cookie";
+
 const Login = () => {
   let Log = useSelector((state) => state.loggedAction);
   const dispatch = useDispatch();
+//let user = Cookies.get("userLogged");
+//let userParse = JSON.parse(user)
+//let name = userParse.username
+//console.log(name);
+
 
   return (
     <div className="containerLogin">
@@ -18,8 +27,10 @@ const Login = () => {
             password: values.password,
           });
 
-          if (response.data != "Username Or Password incorrect") {
+          if (response.data !== "Username Or Password incorrect") {
             console.log("USUARIO LOGEADO");
+            Cookies.set("userLogged", JSON.stringify(response.data));
+            
             dispatch(LOGEARSE());
           } else {
             console.log("no LOGEADO");
@@ -61,6 +72,7 @@ const Login = () => {
           </form>
         )}
       </Formik>
+
     </div>
   );
 };
