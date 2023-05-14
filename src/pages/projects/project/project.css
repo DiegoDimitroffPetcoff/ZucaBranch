@@ -24,6 +24,25 @@ p{
   padding: 10px;
 }
 
+.buttonDelete{
+  padding: 10px;
+  background-color: #ec151594;
+  color: black;
+  border-radius: 5px;
+  box-shadow: none;
+  font-family: 'Raleway', sans-serif;
+  text-align: justify;
+  text-shadow: 2px 2px 5px rgb(0 0 0 / 82%);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.buttonDelete:hover{
+opacity: 0.5;
+transition: 0.3s;
+
+}
+
 @media screen and (max-width: 768px) {
 
   .title{

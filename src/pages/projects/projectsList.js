@@ -27,11 +27,14 @@ export function ProjectsList() {
     <Nav></Nav>
     <div>
       {data.map((project) => {
+
         return (
+        
           <ProjectComponent
             description={project.description}
             title={project.name}
             img={project.image.url}
+            id={project._id}
           />
         );
       })}

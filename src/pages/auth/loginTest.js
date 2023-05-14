@@ -2,21 +2,9 @@ import "../../css/login.css";
 import { useSelector, useDispatch } from "react-redux";
 import { LOGEARSE, DESLOGEARSE } from "../../reducers/actions";
 
-
 import Cookies from "js-cookie";
 
-
 const LoginTest = () => {
-
-
-  const user = Cookies.get("userLogged");
-  const userParse = JSON.parse(user)
-  console.log(userParse.username);
-
-
-
-
-
   let log = useSelector((state) => state.loggedAction);
   const dispatch = useDispatch();
   return (
