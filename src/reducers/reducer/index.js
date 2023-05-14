@@ -2,9 +2,9 @@ import { combineReducers } from 'redux'
 import loggedAction from './logged'
 
 
- const allReducers = combineReducers({
+ const rootReducer = combineReducers({
     loggedAction
 
 })
 
-export default allReducers
+export default rootReducer

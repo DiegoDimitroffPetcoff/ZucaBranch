@@ -5,25 +5,25 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 
-//REDUX
-import { legacy_createStore as createStore } from "redux";
-import allReducers from "./reducers/reducer";
+//REDUX & REDUX PERSIST
 import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
+import { store } from "./reducers/reduxPersist/reduxPersist";
+import { persistor } from "./reducers/reduxPersist/reduxPersist";
 
-const store = createStore(
-  allReducers,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <Provider store={store}>
-    <React.StrictMode>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </React.StrictMode>
-  </Provider>
+  <PersistGate persistor={persistor}>
+    <Provider store={store}>
+      <React.StrictMode>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </React.StrictMode>
+    </Provider>
+  </PersistGate>
 );
 
 // If you want to start measuring performance in your app, pass a function
