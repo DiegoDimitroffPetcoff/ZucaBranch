@@ -1,6 +1,8 @@
 import { Formik } from "formik";
 import axios from "axios";
 import "../../css/login.css";
+//import { useHistory } from "react-router-dom";
+
 
 import { useSelector, useDispatch } from "react-redux";
 import { LOGEARSE } from "../../reducers/actions";
@@ -15,14 +17,14 @@ const Login = () => {
 //let name = userParse.username
 //console.log(name);
 
-
+//const history = useHistory()
   return (
     <div className="containerLogin">
       <h1>Login</h1>
       <Formik
         initialValues={{ name: "", password: "" }}
         onSubmit={async (values, { setSubmitting }) => {
-          let response = await axios.post(`http://localhost:3000/login/`, {
+          let response = await axios.post(`https://backendlogin.onrender.com/login/`, {
             username: values.name,
             password: values.password,
           });
@@ -32,6 +34,7 @@ const Login = () => {
             Cookies.set("userLogged", JSON.stringify(response.data));
             
             dispatch(LOGEARSE());
+            //history.push("/");
           } else {
             console.log("no LOGEADO");
           }
