@@ -20,7 +20,6 @@ export function Nav() {
   const userString = Cookies.get("userLogged");
   let userParse = "";
   if (userString) {
-    
     userParse = JSON.parse(userString);
   }
 
@@ -37,8 +36,10 @@ export function Nav() {
   function toggleLogMenu() {
     setNavLogIsOpen(!navLogIsOpen);
     const navElement = document.getElementsByClassName("logOutBotton")[0];
+    const navElement2 = document.getElementsByClassName("logOutBotton")[1];
     if (navElement) {
       navElement.classList.toggle("showLogOut");
+      navElement2.classList.toggle("showLogOut");
     }
   }
 
@@ -72,20 +73,28 @@ export function Nav() {
             {!log ? (
               ""
             ) : (
-              <button
-                className="logOutBotton"
-                onClick={() => {
-                  dispatch(DESLOGEARSE())
-                  window.location.href = "/";
+              <div className="logOutMenu">
+                <button
+                  className="logOutBotton"
+                  onClick={() => {
+                    window.location.href = "/dashboard";
                   }}
-                
-              >
-                Log Out
-              </button>
+                >
+                  Dashboard
+                </button>
+                <button
+                  className="logOutBotton"
+                  onClick={() => {
+                    dispatch(DESLOGEARSE());
+                    window.location.href = "/";
+                  }}
+                >
+                  Log Out
+                </button>
+              </div>
             )}
           </li>
         </ul>
-
       </span>
     </nav>
   );
