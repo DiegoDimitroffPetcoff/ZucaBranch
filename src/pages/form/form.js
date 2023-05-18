@@ -3,6 +3,8 @@ import { Formik, Form } from "formik";
 import axios from "axios";
 import "../../css/login.css";
 import Nav from "../nav";
+import BarLoader from "react-spinners/BarLoader";
+import Button from "react-bootstrap/Button";
 
 const FormLogin = () => (
   <div>
@@ -73,21 +75,33 @@ const FormLogin = () => (
               />
               {errors.file && touched.file && errors.file}
 
-              <button
+              <Button
                 className="loginButton"
                 type="submit"
                 to="/projectlist"
                 disabled={isSubmitting}
               >
                 Subir Projecto
-              </button>
+              </Button>
               {isSubmitting ? (
-                <p className="isSubmitting project">
+                <div className="spinner">
+                  <p className="isSubmitting">
                   "Cargando Proyecto... Esto puede demorar unos segundos"
-                </p>
+                  </p>
+                  <BarLoader color="#36d7b7" height={2} width={90} />
+                </div>
               ) : (
                 ""
               )}
+
+
+
+
+
+
+
+
+
             </div>
           </Form>
         )}

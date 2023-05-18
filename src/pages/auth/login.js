@@ -5,6 +5,7 @@ import "../../css/login.css";
 
 import { useSelector, useDispatch } from "react-redux";
 import { LOGEARSE } from "../../reducers/actions";
+import BarLoader from "react-spinners/BarLoader";
 
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -13,14 +14,8 @@ import Nav from "../nav";
 import Cookies from "js-cookie";
 
 const Login = () => {
-  let Log = useSelector((state) => state.loggedAction);
   const dispatch = useDispatch();
-  //let user = Cookies.get("userLogged");
-  //let userParse = JSON.parse(user)
-  //let name = userParse.username
-  //console.log(name);
 
-  //const history = useHistory()
   return (
     <div>
       <Nav></Nav>
@@ -45,6 +40,7 @@ const Login = () => {
               window.location.href = "./login/form";
             } else {
               console.log("no LOGEADO");
+              alert("Password o Usuario incorrecto");
             }
           }}
         >
@@ -83,9 +79,12 @@ const Login = () => {
                 </Button>
               </div>
               {isSubmitting ? (
-                <p className="isSubmitting">
-                  "Cargando... Esto puede demorar unos segundos"
-                </p>
+                <div className="spinner">
+                  <p className="isSubmitting">
+                    "Cargando... Esto puede demorar unos segundos"
+                  </p>
+                  <BarLoader color="#36d7b7" height={2} width={90} />
+                </div>
               ) : (
                 ""
               )}

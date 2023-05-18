@@ -74,7 +74,7 @@ export function Nav() {
             ) : (
               <button
                 className="logOutBotton"
-                onClick={() => dispatch(DESLOGEARSE())}
+                onClick={() => {dispatch(DESLOGEARSE())}}
               >
                 Log Out
               </button>

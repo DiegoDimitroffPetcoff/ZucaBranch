@@ -24,26 +24,22 @@ form {
 
 
 .loginButton {
-  width: 100px;
-  margin: 0 auto;
+
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .fileButton {
-  width: 50%;
-  margin: 0 auto;
-
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .titleForm {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .description {
-  width: 90%;
+  width: 100%;
   height: 300px;
   margin: 0 auto;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
@@ -61,6 +57,13 @@ form {
 
 .project{
   top: 5%;
+}
+
+.spinner{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 @media screen and (max-width: 768px) {
