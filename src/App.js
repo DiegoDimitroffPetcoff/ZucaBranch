@@ -1,8 +1,6 @@
 import Header from "./pages/header";
 import { Routes, Route } from "react-router-dom";
 
-
-
 //PAGES
 import ProjectsList from "./pages/projects/projectsList";
 import ProjectComponent from "./pages/projects/project/project";
@@ -12,9 +10,10 @@ import PageNotFound from "./pages/404";
 
 import LoginTest from "./pages/auth/loginTest";
 
-
+import { useSelector } from "react-redux";
 
 function App() {
+  let log = useSelector((state) => state.loggedAction);
   return (
     <div className="App">
       <Routes>
@@ -29,7 +28,8 @@ function App() {
         <Route path="*" element={<PageNotFound />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/test" element={<LoginTest />}></Route>
-        <Route path="/login/form" element={<Form />}></Route>
+
+        {!log ? null : <Route path="/login/form" element={<Form />}></Route>}
       </Routes>
     </div>
   );

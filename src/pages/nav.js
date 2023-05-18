@@ -14,7 +14,7 @@ import { DESLOGEARSE } from "../../src/reducers/actions";
 export function Nav() {
   const [navIsOpen, setNavIsOpen] = useState(false);
   let log = useSelector((state) => state.loggedAction);
-  console.log(log);
+
   const userString = Cookies.get("userLogged");
   const userParse = JSON.parse(userString);
 
