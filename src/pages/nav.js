@@ -14,9 +14,9 @@ import { DESLOGEARSE } from "../../src/reducers/actions";
 export function Nav() {
   const [navIsOpen, setNavIsOpen] = useState(false);
   let log = useSelector((state) => state.loggedAction);
-
+  const userParse = "";
   const userString = Cookies.get("userLogged");
-  const userParse = JSON.parse(userString);
+  userParse = JSON.parse(userString);
 
   const dispatch = useDispatch();
 
@@ -47,17 +47,15 @@ export function Nav() {
             <Link to="/">Contacto</Link>
           </li>
           <li>
-          
-            {!log ? (
-              <Link to="/login">Login</Link>
-            ) : (
-             userParse.username
-            )} 
-        
+            {!log ? <Link to="/login">Login</Link> : userParse.username}
+
             {!log ? (
               ""
             ) : (
-              <button className="logOutBotton" onClick={() => dispatch(DESLOGEARSE())}>
+              <button
+                className="logOutBotton"
+                onClick={() => dispatch(DESLOGEARSE())}
+              >
                 DESLOGEARSE
               </button>
             )}
