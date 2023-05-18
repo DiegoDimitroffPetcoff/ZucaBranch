@@ -18,6 +18,7 @@ export function Nav() {
   const userString = Cookies.get("userLogged");
   let userParse = "";
   if (userString) {
+    console.log("SI");
     userParse = JSON.parse(userString);
   }
 
