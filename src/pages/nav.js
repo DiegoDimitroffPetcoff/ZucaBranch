@@ -6,9 +6,19 @@ import { Link } from "react-router-dom";
 
 import englandFlag from "../assests/imagen/englandFlag.png";
 import spainFlag from "../assests/imagen/spainFlag.png";
+import { useSelector, useDispatch } from "react-redux";
+import Cookies from "js-cookie";
+
+import { DESLOGEARSE } from "../../src/reducers/actions";
 
 export function Nav() {
   const [navIsOpen, setNavIsOpen] = useState(false);
+  let log = useSelector((state) => state.loggedAction);
+  console.log(log);
+  const userString = Cookies.get("userLogged");
+  const userParse = JSON.parse(userString);
+
+  const dispatch = useDispatch();
 
   function toggleMenu() {
     setNavIsOpen(!navIsOpen);
@@ -36,10 +46,26 @@ export function Nav() {
           <li>
             <Link to="/">Contacto</Link>
           </li>
-          <li className="lenguajesHeaderContent">
+          <li>
+          
+            {!log ? (
+              <Link to="/login">Login</Link>
+            ) : (
+             userParse.username
+            )} 
+        
+            {!log ? (
+              ""
+            ) : (
+              <button className="logOutBotton" onClick={() => dispatch(DESLOGEARSE())}>
+                DESLOGEARSE
+              </button>
+            )}
+          </li>
+          {/*   <li className="lenguajesHeaderContent">
             <img className="lenguajesHeader" src={englandFlag} alt="Logo" />
             <img className="lenguajesHeader" src={spainFlag} alt="Logo" />
-          </li>
+          </li>*/}
         </ul>{" "}
       </span>
     </nav>

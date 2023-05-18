@@ -25,7 +25,7 @@ export function ProjectsList() {
   return (
     <div>
     <Nav></Nav>
-    <div>
+    <div className="projectOrden">
       {data.map((project) => {
 
         return (

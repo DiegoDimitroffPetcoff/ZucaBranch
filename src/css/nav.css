@@ -33,12 +33,25 @@ li {
   font-family: "Raleway", sans-serif;
   color: white;
   font-size: 25px;
-  padding:40px;
+  margin-top: 40px;
   width: 20%;
   text-align: center;
   text-decoration: none;
 
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+ul li:last-child {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+
+  border-radius: 35px;
+  transition: 0.3s;
+}
+
+ul li:last-child:hover {
+  background-color: #5a6e73;
+  transition: 0.3s;
+  cursor: pointer;
 }
 
 a:visited {
@@ -58,6 +71,24 @@ a:visited {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+.projectOrden {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.logOutBotton {
+  background: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.logOutBotton:hover {
+opacity: 0.5;
+transition: 0.5s;
+color: rgba(255, 0, 0, 0.567);
 }
 
 @media screen and (max-width: 768px) {
