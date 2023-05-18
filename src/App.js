@@ -9,6 +9,7 @@ import Form from "./pages/form/form";
 import PageNotFound from "./pages/404";
 
 import LoginTest from "./pages/auth/loginTest";
+import Dashboard from "./pages/form/dashboard";
 
 import { useSelector } from "react-redux";
 
@@ -30,7 +31,8 @@ function App() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/test" element={<LoginTest />}></Route>
 
-        {!log ? <Route path="/login/form" element={<Header />}></Route> : <Route path="/login/form" element={<Form />}></Route>}
+        {!log ? "": <Route path="/login/form" element={<Form />}></Route>}
+        {!log ? "" : <Route path="/Dashboard" element={<Dashboard />}></Route>}
       </Routes>
     </div>
   );

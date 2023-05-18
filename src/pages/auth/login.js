@@ -37,7 +37,7 @@ const Login = () => {
               console.log("USUARIO LOGEADO");
               Cookies.set("userLogged", JSON.stringify(response.data));
               dispatch(LOGEARSE());
-              window.location.href = "./login/form";
+              window.location.href = "./dashboard";
             } else {
               console.log("no LOGEADO");
               alert("Password o Usuario incorrecto");

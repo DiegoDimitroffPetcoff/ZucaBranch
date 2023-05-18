@@ -1,0 +1,14 @@
+.dropdown-menu.show {
+
+  flex-direction: column;
+  padding: 3%;
+  margin: 10px 40%;
+}
+
+@media screen and (max-width: 768px) {
+
+  .dropdown-menu.show {
+
+    margin: 0 20%;
+  }
+}

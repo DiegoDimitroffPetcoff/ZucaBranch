@@ -74,7 +74,11 @@ export function Nav() {
             ) : (
               <button
                 className="logOutBotton"
-                onClick={() => {dispatch(DESLOGEARSE())}}
+                onClick={() => {
+                  dispatch(DESLOGEARSE())
+                  window.location.href = "/";
+                  }}
+                
               >
                 Log Out
               </button>
