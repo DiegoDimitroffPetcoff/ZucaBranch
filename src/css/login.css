@@ -69,6 +69,7 @@ form {
     flex-direction: column;
     align-content: center;
     justify-content: center;
+    width: 80%;
   }
   .titleForm {
     width: 95%;
@@ -80,5 +81,13 @@ form {
     height: 200px;
     margin: 0 auto;
     width: 95%;
+  }
+  input{
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    width: 90%;
+    align-self: center;
   }
 }
