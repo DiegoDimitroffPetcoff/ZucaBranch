@@ -12,6 +12,7 @@ import LoginTest from "./pages/auth/loginTest";
 
 import { useSelector } from "react-redux";
 
+
 function App() {
   let log = useSelector((state) => state.loggedAction);
   return (
@@ -29,7 +30,7 @@ function App() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/test" element={<LoginTest />}></Route>
 
-        {!log ? null : <Route path="/login/form" element={<Form />}></Route>}
+        {!log ? <Route path="/login/form" element={<Header />}></Route> : <Route path="/login/form" element={<Form />}></Route>}
       </Routes>
     </div>
   );

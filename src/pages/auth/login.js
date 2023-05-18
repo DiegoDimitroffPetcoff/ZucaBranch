@@ -6,6 +6,8 @@ import "../../css/login.css";
 import { useSelector, useDispatch } from "react-redux";
 import { LOGEARSE } from "../../reducers/actions";
 
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 import Nav from "../nav";
 
 import Cookies from "js-cookie";
@@ -56,15 +58,17 @@ const Login = () => {
             isSubmitting,
             /* and other goodies */
           }) => (
-            <form onSubmit={handleSubmit}>
+            <Form onSubmit={handleSubmit}>
               <div className="formContainer">
+                <Form.Label>Usuario</Form.Label>
+
                 <input
                   type="name"
                   name="name"
                   onChange={handleChange}
                   onBlur={handleBlur}
                 />
-
+                <Form.Label>Password</Form.Label>
                 <input
                   type="password"
                   name="password"
@@ -74,9 +78,9 @@ const Login = () => {
 
                 {errors.password && touched.password && errors.password}
 
-                <button className="loginButton" type="submit">
+                <Button className="loginButton" type="submit">
                   Logearse
-                </button>
+                </Button>
               </div>
               {isSubmitting ? (
                 <p className="isSubmitting">
@@ -85,7 +89,7 @@ const Login = () => {
               ) : (
                 ""
               )}
-            </form>
+            </Form>
           )}
         </Formik>
       </div>

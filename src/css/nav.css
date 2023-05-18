@@ -15,7 +15,6 @@ ul {
   padding: 0;
   border: none;
 
-  visibility: visible;
 }
 
 li a {
@@ -45,7 +44,7 @@ ul li:last-child {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 
   border-radius: 35px;
-  transition: 0.3s;
+
 }
 
 ul li:last-child:hover {
@@ -60,7 +59,7 @@ a:visited {
 }
 
 .menuBottomn {
-  visibility: hidden;
+  display: none;
   width: 0;
   height: 0;
 }
@@ -83,12 +82,41 @@ a:visited {
   border: none;
   cursor: pointer;
   transition: 0.5s;
+  display: none;
+  transition: 0.5s;
+  
 }
 
 .logOutBotton:hover {
 opacity: 0.5;
 transition: 0.5s;
 color: rgba(255, 0, 0, 0.567);
+
+}
+
+
+
+.navLogIsOpen {
+  background: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.5s;
+  width: auto;
+  padding: 10px;
+  transition: 0.5s;
+}
+
+.navLogIsOpen:hover {
+opacity: 0.5;
+transition: 0.5s;
+
+}
+
+.showLogOut{ 
+  display: block;
+  transition: 0.5s;
+  position: absolute;
 }
 
 @media screen and (max-width: 768px) {
@@ -111,6 +139,7 @@ color: rgba(255, 0, 0, 0.567);
     backdrop-filter: blur(8px); /* Aplica el desenfoque en el fondo */
     opacity: 0;
     transition: 0.3s;
+    visibility: hidden;
   }
 
   li {
@@ -129,18 +158,22 @@ color: rgba(255, 0, 0, 0.567);
     padding: 4%;
     width: auto;
     height: 100%;
-    visibility: visible;
+  display: flex;
 
     align-self: end;
   }
 
   .show {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
     visibility: visible;
     transition: 0.3s;
     opacity: 1;
   }
+  ul li:last-child {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 35px;
+}
 }

@@ -13,12 +13,14 @@ import { DESLOGEARSE } from "../../src/reducers/actions";
 
 export function Nav() {
   const [navIsOpen, setNavIsOpen] = useState(false);
+
+  const [navLogIsOpen, setNavLogIsOpen] = useState(false);
   let log = useSelector((state) => state.loggedAction);
 
   const userString = Cookies.get("userLogged");
   let userParse = "";
   if (userString) {
-    console.log("SI");
+    
     userParse = JSON.parse(userString);
   }
 
@@ -31,6 +33,15 @@ export function Nav() {
       navElement.classList.toggle("show");
     }
   }
+
+  function toggleLogMenu() {
+    setNavLogIsOpen(!navLogIsOpen);
+    const navElement = document.getElementsByClassName("logOutBotton")[0];
+    if (navElement) {
+      navElement.classList.toggle("showLogOut");
+    }
+  }
+
   return (
     <nav>
       <button className="menuBottomn" onClick={toggleMenu}>
@@ -50,9 +61,14 @@ export function Nav() {
           <li>
             <Link to="/">Contacto</Link>
           </li>
-          <li>
-            {!log ? <Link to="/login">Login</Link> : userParse.username}
-
+          <li className="navLogIsOpen">
+            {!log ? (
+              <Link to="/login">Login</Link>
+            ) : (
+              <button className="navLogIsOpen" onClick={toggleLogMenu}>
+                {userParse.username}
+              </button>
+            )}
             {!log ? (
               ""
             ) : (
@@ -60,15 +76,12 @@ export function Nav() {
                 className="logOutBotton"
                 onClick={() => dispatch(DESLOGEARSE())}
               >
-                DESLOGEARSE
+                Log Out
               </button>
             )}
           </li>
-          {/*   <li className="lenguajesHeaderContent">
-            <img className="lenguajesHeader" src={englandFlag} alt="Logo" />
-            <img className="lenguajesHeader" src={spainFlag} alt="Logo" />
-          </li>*/}
-        </ul>{" "}
+        </ul>
+
       </span>
     </nav>
   );
