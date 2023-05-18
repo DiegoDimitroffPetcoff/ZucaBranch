@@ -24,9 +24,14 @@ export default function ProjectComponent({ description, img, title, id }) {
       <p className="description">{description}</p>
 
       {Log ? (
-        <button className="buttonDelete" onClick={() => delteProject(id)}>
-          ELIMINAR PUBLICACION
-        </button>
+        <div>
+          <button className="buttonDelete" onClick={() => delteProject(id)}>
+            ELIMINAR PUBLICACION
+          </button>
+          <button className="buttonEdite" onClick={() => alert("funcion aun no lista")}>
+            EDITAR PUBLICACION
+          </button>
+        </div>
       ) : (
         ""
       )}

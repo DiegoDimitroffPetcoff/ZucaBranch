@@ -4,8 +4,7 @@ import "../css/head.css";
 import { FaBars } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-import englandFlag from "../assests/imagen/englandFlag.png";
-import spainFlag from "../assests/imagen/spainFlag.png";
+
 import { useSelector, useDispatch } from "react-redux";
 import Cookies from "js-cookie";
 
