@@ -37,6 +37,7 @@ const Login = () => {
               console.log("USUARIO LOGEADO");
               Cookies.set("userLogged", JSON.stringify(response.data));
               dispatch(LOGEARSE());
+           
               window.location.href = "./dashboard";
             } else {
               console.log("no LOGEADO");

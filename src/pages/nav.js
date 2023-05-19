@@ -80,6 +80,7 @@ export function Nav() {
                   className="logOutBotton"
                   onClick={() => {
                     dispatch(DESLOGEARSE());
+                    Cookies.remove("userLogged")
                     window.location.href = "/";
                   }}
                 >
