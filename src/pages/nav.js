@@ -4,7 +4,6 @@ import "../css/head.css";
 import { FaBars } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-
 import { useSelector, useDispatch } from "react-redux";
 import Cookies from "js-cookie";
 
@@ -61,17 +60,13 @@ export function Nav() {
           <li>
             <Link to="/">Contacto</Link>
           </li>
-          <li className="navLogIsOpen">
-            {!log ? (
-              <Link to="/login">Login</Link>
-            ) : (
+
+          {!log ? null : (
+            <li>
+              {" "}
               <button className="navLogIsOpen" onClick={toggleLogMenu}>
                 {userParse.username}
               </button>
-            )}
-            {!log ? (
-              ""
-            ) : (
               <div className="logOutMenu">
                 <button
                   className="logOutBotton"
@@ -91,8 +86,8 @@ export function Nav() {
                   Log Out
                 </button>
               </div>
-            )}
-          </li>
+            </li>
+          )}
         </ul>
       </span>
     </nav>

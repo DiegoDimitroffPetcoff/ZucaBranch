@@ -1,11 +1,31 @@
 import { Link } from "react-router-dom";
-
+import axios from "axios";
 
 import "../css/head.css";
 
 import Nav from "./nav";
 
 export function Header() {
+  axios
+    .get("https://zucaarqback.onrender.com", {})
+    .then(function (response) {
+      console.log(response.data);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+
+    axios
+    .get("https://backendlogin.onrender.com", {})
+    .then(function (response) {
+      console.log(response.data);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+    
+
+
 
   return (
     <div className="Main">

@@ -15,7 +15,6 @@ ul {
   padding: 0;
   border: none;
   height: 400px;
-
 }
 
 li a {
@@ -41,14 +40,13 @@ li {
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-ul li:last-child {
+ul li:nth-child(4) {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 
   width: 150px;
-
 }
 
-ul li:last-child:hover {
+ul li:nth-child(4):hover {
   background-color: #5a6e73;
   transition: 0.3s;
   cursor: pointer;
@@ -86,17 +84,13 @@ a:visited {
   transition: 0.5s;
   display: none;
   transition: 0.5s;
-  
 }
 
 .logOutBotton:hover {
-opacity: 0.5;
-transition: 0.5s;
-color: rgba(255, 0, 0, 0.567);
-
+  opacity: 0.5;
+  transition: 0.5s;
+  color: rgba(255, 0, 0, 0.567);
 }
-
-
 
 .navLogIsOpen {
   background: transparent;
@@ -104,23 +98,21 @@ color: rgba(255, 0, 0, 0.567);
   border: none;
   cursor: pointer;
   transition: 0.5s;
-  width: auto;
+
   padding: 10px;
   transition: 0.5s;
 }
 
-
-
-.showLogOut{ 
+.showLogOut {
   display: block;
   transition: 0.5s;
-  color: red;
+  color: #e9ecef;;
   margin: 0px;
 
-  font-size: 20px;
+
+
+  margin: auto;
 }
-
-
 
 @media screen and (max-width: 768px) {
   nav {
@@ -161,7 +153,7 @@ color: rgba(255, 0, 0, 0.567);
     padding: 4%;
     width: auto;
     height: 100%;
-  display: flex;
+    display: flex;
 
     align-self: end;
   }
@@ -175,17 +167,20 @@ color: rgba(255, 0, 0, 0.567);
     transition: 0.3s;
     opacity: 1;
   }
-  ul li:last-child {
+  ul li:nth-child(4) {
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     border-radius: 35px;
-    width: auto;
-}
+    width: 100%;
+  }
 
+  ul li:nth-child(4):hover {
+    width: 100%;
+  }
 
+  .showLogOut {
+    font-size: 20px;
 
-.showLogOut{ 
-  font-size: 20px;
-  color: red;
-  position: relative;
-}
+    position: relative;
+    margin: auto;
+  }
 }
