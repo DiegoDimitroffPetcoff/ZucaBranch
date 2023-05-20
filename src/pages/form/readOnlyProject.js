@@ -1,22 +1,18 @@
-import React from "react";
+import "../../pages/projects/project/project.css";
 
-const ReadOnlyProject = ({ project }) => {
+
+
+
+export default function ReadOnlyProject({ description, img, title, id }) {
+
   return (
     <div className="containerProject">
-      <h1 className="title">{project.name}</h1>
-      <img
-        className="imagenProject"
-        src={project.description}
-        alt="Project Description"
-      />
-      <p className="description">{project.description}</p>
+      <h1 className="title">{title}</h1>
+      <img className="imagenProject" src={img} alt="Project Description" />
+      <p className="description">{description}</p>
 
-      <div>
-        <button className="buttonDelete">ELIMINAR PUBLICACION</button>
-        <button className="buttonEdite">EDITAR PUBLICACION</button>
-      </div>
+
     </div>
   );
-};
-
-export default ReadOnlyProject;
+}
+//TODO TENGO QUE CREAR UN ONLY READ COMO ESTE PERO EN DONDE YA NO APAREZCAN LOS BOTONES.. Y EL TEXTO SEA EDITABLE

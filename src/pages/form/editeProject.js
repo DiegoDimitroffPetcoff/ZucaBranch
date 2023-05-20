@@ -4,7 +4,7 @@ import axios from "axios";
 import "../../css/login.css";
 import Nav from "../nav";
 
-import ProjectComponent from "../projects/project/project";
+import ReadOnlyProject from "./readOnlyProject";
 
 import queryString from "query-string";
 
@@ -29,13 +29,13 @@ const EditeProject = () => {
   return (
     <div>
       <Nav></Nav>
-      return{" "}
-      <ProjectComponent
+
+      <ReadOnlyProject
         description={project.description}
         title={project.name}
         img={project.image?.url}
         id={project._id}
-      ></ProjectComponent>
+      ></ReadOnlyProject>
     </div>
   );
 };
