@@ -1,6 +1,8 @@
 import "./project.css";
 import axios from "axios";
 import { useSelector } from "react-redux";
+import EditeProject from "../../form/editeProject";
+
 
 export default function ProjectComponent({ description, img, title, id }) {
   let Log = useSelector((state) => state.loggedAction);
@@ -17,6 +19,11 @@ export default function ProjectComponent({ description, img, title, id }) {
       });
   }
 
+  function editeProject(id) {
+
+    window.location.href = "/editeproject?id=" + id;
+  }
+
   return (
     <div className="containerProject">
       <h1 className="title">{title}</h1>
@@ -28,7 +35,7 @@ export default function ProjectComponent({ description, img, title, id }) {
           <button className="buttonDelete" onClick={() => delteProject(id)}>
             ELIMINAR PUBLICACION
           </button>
-          <button className="buttonEdite" onClick={() => alert("funcion aun no lista")}>
+          <button className="buttonEdite" onClick={() => editeProject(id)}>
             EDITAR PUBLICACION
           </button>
         </div>
@@ -38,3 +45,4 @@ export default function ProjectComponent({ description, img, title, id }) {
     </div>
   );
 }
+//TODO TENGO QUE CREAR UN ONLY READ COMO ESTE PERO EN DONDE YA NO APAREZCAN LOS BOTONES.. Y EL TEXTO SEA EDITABLE

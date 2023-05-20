@@ -10,6 +10,7 @@ import PageNotFound from "./pages/404";
 
 import LoginTest from "./pages/auth/loginTest";
 import Dashboard from "./pages/form/dashboard";
+import EditeProject from "./pages/form/editeProject";
 
 import { useSelector } from "react-redux";
 
@@ -33,6 +34,7 @@ function App() {
 
         {!log ? "": <Route path="/login/form" element={<Form />}></Route>}
         {!log ? "" : <Route path="/Dashboard" element={<Dashboard />}></Route>}
+        {!log ? "" : <Route path="/editeProject" element={<EditeProject />}></Route>}
       </Routes>
     </div>
   );
