@@ -6,73 +6,28 @@
   align-items: center;
 
   margin: 5%;
-  box-shadow:2px 2px 20px 0px rgba(0, 0, 0, 0.3);
-  
+  box-shadow: 2px 2px 20px 0px rgba(0, 0, 0, 0.3);
 }
 
 .imagenProject {
   width: 100%;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-
 }
 
-.title{
+.title {
   font-size: 50px;
   padding: 5%;
 }
-p{
+p {
   padding: 10px;
-}
-
-.buttonDelete{
-  padding: 10px;
-  background-color: #ec151594;
-  color: black;
-  border-radius: 5px;
-  box-shadow: none;
-  font-family: 'Raleway', sans-serif;
-  text-align: justify;
-  text-shadow: 2px 2px 5px rgb(0 0 0 / 82%);
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.buttonDelete:hover{
-opacity: 0.5;
-transition: 0.3s;
-
-}
-
-
-
-
-.buttonEdite{
-  padding: 10px;
-  background-color: #15ec6094;
-  color: black;
-  border-radius: 5px;
-  box-shadow: none;
-  font-family: 'Raleway', sans-serif;
-  text-align: justify;
-  text-shadow: 2px 2px 5px rgb(0 0 0 / 82%);
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.buttonEdite:hover{
-opacity: 0.5;
-transition: 0.3s;
-
 }
 
 @media screen and (max-width: 768px) {
-
-  .title{
+  .title {
     font-size: 30px;
     padding: 2%;
   }
-  p{
+  p {
     padding: 10px;
   }
-
 }

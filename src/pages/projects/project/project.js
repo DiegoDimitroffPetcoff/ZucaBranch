@@ -2,7 +2,7 @@ import "./project.css";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import EditeProject from "../../form/editeProject";
-
+import Button from "react-bootstrap/Button";
 
 export default function ProjectComponent({ description, img, title, id }) {
   let Log = useSelector((state) => state.loggedAction);
@@ -20,7 +20,6 @@ export default function ProjectComponent({ description, img, title, id }) {
   }
 
   function editeProject(id) {
-
     window.location.href = "/editeproject?id=" + id;
   }
 
@@ -32,12 +31,12 @@ export default function ProjectComponent({ description, img, title, id }) {
 
       {Log ? (
         <div>
-          <button className="buttonDelete" onClick={() => delteProject(id)}>
+          <Button variant="danger" onClick={() => delteProject(id)}>
             ELIMINAR PUBLICACION
-          </button>
-          <button className="buttonEdite" onClick={() => editeProject(id)}>
+          </Button>{" "}
+          <Button variant="success" onClick={() => editeProject(id)}>
             EDITAR PUBLICACION
-          </button>
+          </Button>{" "}
         </div>
       ) : (
         ""
