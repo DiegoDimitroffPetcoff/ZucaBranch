@@ -1,7 +1,7 @@
 import "./project.css";
 import axios from "axios";
 import { useSelector } from "react-redux";
-import EditeProject from "../../form/editeProject";
+
 import Button from "react-bootstrap/Button";
 
 export default function ProjectComponent({ description, img, title, id }) {

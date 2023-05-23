@@ -25,7 +25,7 @@ function Dashboard() {
         <h1> Editar y/o Eliminar un proyecto</h1>
         </Dropdown.Item>
          <Dropdown.Divider />
-        <Dropdown.Item eventKey="3"><h1>Editar Seccion "Quien soy"</h1></Dropdown.Item>
+        <Dropdown.Item eventKey="3" href="profile"><h1>Editar Seccion "Quien soy"</h1></Dropdown.Item>
         <Dropdown.Item eventKey="4"><h1>Editar Seccion "Contactos"</h1></Dropdown.Item>
       </Dropdown.Menu>
       <div className="dashboardMenu"></div>{" "}

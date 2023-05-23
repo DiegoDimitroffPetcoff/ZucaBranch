@@ -1,0 +1,15 @@
+.containerProfile {
+  margin: 2%;
+}
+
+.titleProfile{
+  font-size: 50px;
+}
+
+.imagenProfile {
+  float: left;
+  width: 40%;
+  margin: 3%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+

@@ -51,7 +51,7 @@ export function Nav() {
         {" "}
         <ul>
           <li>
-            <Link to="/">Quien Soy?</Link>
+            <Link to="/profile">Quien Soy?</Link>
           </li>
           <li>
             <Link to="/projectlist">Proyectos</Link>
