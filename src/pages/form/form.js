@@ -1,6 +1,6 @@
 import React from "react";
 import { Formik, Form } from "formik";
-import axios from "axios";
+import { AxiosPost } from "../../utils/axios";
 import "../../css/login.css";
 import Nav from "../nav";
 import BarLoader from "react-spinners/BarLoader";
@@ -19,16 +19,8 @@ const FormLogin = () => (
           formData.append("description", values.description);
           formData.append("file", values.file);
 
-          await axios.post(
-            `https://zucaarqback.onrender.com/project`,
-            formData,
-            {
-              headers: {
-                "Content-Type": "multipart/form-data",
-              },
-            }
-          );
-
+          let url = "https://zucaarqback.onrender.com/project";
+          AxiosPost(url, formData);
           window.location.href = "../projectlist";
         }}
       >
@@ -86,22 +78,13 @@ const FormLogin = () => (
               {isSubmitting ? (
                 <div className="spinner">
                   <p className="isSubmitting">
-                  "Cargando Proyecto... Esto puede demorar unos segundos"
+                    "Cargando Proyecto... Esto puede demorar unos segundos"
                   </p>
                   <BarLoader color="#36d7b7" height={2} width={90} />
                 </div>
               ) : (
                 ""
               )}
-
-
-
-
-
-
-
-
-
             </div>
           </Form>
         )}

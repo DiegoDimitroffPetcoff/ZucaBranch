@@ -1,21 +1,23 @@
 import React, { useState, useEffect } from "react";
-//import { Outlet, Link } from "react-router-dom";
+
 import ProjectComponent from "./project/project";
 import Nav from "../nav";
-import axios from "axios";
+import { AxiosGetAll } from "../../utils/axios";
 
 export function ProjectsList() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("https://zucaarqback.onrender.com/projects")
-      .then((response) => {
-        setData(response.data);
+    let url = "https://zucaarqback.onrender.com/projects";
+
+    AxiosGetAll(url)
+      .then((responseData) => {
+        setData(responseData);
       })
       .catch((error) => {
         console.log(error);
       });
+
   }, []);
 
   return (
