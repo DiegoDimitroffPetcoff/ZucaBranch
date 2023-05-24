@@ -38,7 +38,7 @@ export function Profile() {
       <Nav></Nav>
 
       <div className="containerProfile">
-        {Edit ? (
+        {!Edit ? (
           <div>
             {" "}
             <h1 className="titleProfile">{data[0].title}</h1>
