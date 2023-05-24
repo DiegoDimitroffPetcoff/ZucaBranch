@@ -5,7 +5,13 @@ import Nav from "../nav";
 import { AxiosGetAll } from "../../utils/axios";
 
 export function ProjectsList() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState([
+    {
+      image: [{ url: "Cargando.." }],
+      description: "Cargando..",
+      name: "Cargando..",
+    },
+  ]);
 
   useEffect(() => {
     let url = "https://zucaarqback.onrender.com/projects";
@@ -17,7 +23,6 @@ export function ProjectsList() {
       .catch((error) => {
         console.log(error);
       });
-
   }, []);
 
   return (
