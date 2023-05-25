@@ -33,6 +33,7 @@ export function Profile() {
   function editeDescription(params) {
     setEdit(!Edit);
   }
+
   return (
     <div>
       <Nav></Nav>
@@ -54,16 +55,16 @@ export function Profile() {
             img={data[0].image?.url}
           ></FormikEditeProfile>
         )}
-
-        {Log ? (
-          <div>
-            <Button variant="success" onClick={() => editeDescription()}>
-              EDITAR PUBLICACION
-            </Button>{" "}
-          </div>
-        ) : (
-          ""
-        )}
+      
+      {Log && !Edit ? (
+        <div>
+          <Button variant="success" onClick={() => editeDescription()}>
+            EDITAR PUBLICACION
+          </Button>{" "}
+        </div>
+      ) : (
+        ""
+      )}
       </div>
     </div>
   );
