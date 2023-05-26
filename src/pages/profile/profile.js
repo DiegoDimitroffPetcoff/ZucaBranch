@@ -7,6 +7,7 @@ import Image from "react-bootstrap/Image";
 import { AxiosGetAll } from "../../utils/axios";
 import FormikEditeProfile from "../../utils/formikEditeProfile";
 
+
 export function Profile() {
   let Log = useSelector((state) => state.loggedAction);
   const [Edit, setEdit] = useState(false);
@@ -52,6 +53,7 @@ export function Profile() {
           <FormikEditeProfile
             description={data[0].description}
             title={data[0].title}
+            id={data[0]._id}
             img={data[0].image?.url}
           ></FormikEditeProfile>
         )}

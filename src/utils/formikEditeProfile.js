@@ -4,16 +4,25 @@ import Image from "react-bootstrap/Image";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import "../css/profile.css";
-
-const FormikEditeProfile = ({ description, title, img }) => {
+import BarLoader from "react-spinners/BarLoader";
+import axios from "axios";
+const FormikEditeProfile = ({ description, title, img, id }) => {
   return (
     <Formik
-      initialValues={{ title: title, description: description }}
-      onSubmit={(values, { setSubmitting }) => {
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-          setSubmitting(false);
-        }, 400);
+      initialValues={{ title: title, description: description, id: id }}
+      onSubmit={async (values, { setSubmitting }) => {
+        let edition = { description: values.description, title: values.title };
+
+        await axios
+          .patch("https://zucaarqback.onrender.com/profile/" + id, edition)
+
+          .then((response) => {
+            window.location.href = "/profile";
+          })
+
+          .catch((error) => {
+            console.log(error);
+          });
       }}
     >
       {({
@@ -45,17 +54,25 @@ const FormikEditeProfile = ({ description, title, img }) => {
               onBlur={handleBlur}
               value={values.description}
             />
-            <div className="ContainerButton">
-            <Button variant="success" type="submit" disabled={isSubmitting}>
-              Aceptar
-            </Button>
-            <Button
-              variant="dark"
-              onClick={() => (window.location.href = "/profile")}
-            >
-              Volver
-            </Button>{" "}
-            </div>
+
+            {isSubmitting ? (
+              <div className="spinner">
+                <p>"Cargando Proyecto... Esto puede demorar unos segundos"</p>
+                <BarLoader color="#36d7b7" height={2} width={90} />
+              </div>
+            ) : (
+              <div className="ContainerButton">
+                <Button variant="success" type="submit">
+                  Aceptar
+                </Button>
+                <Button
+                  variant="dark"
+                  onClick={() => (window.location.href = "/profile")}
+                >
+                  Volver
+                </Button>{" "}
+              </div>
+            )}
           </div>
         </Form>
       )}

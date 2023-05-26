@@ -59,7 +59,7 @@ const Edite = ({ description, img, title, id }) => {
             value={formik.values.name}
           />
         </h1>
-        {/*  <img className="imagenProjectEdite" src={img} alt="Project Description" />*/}
+       
         <Image src={img} fluid />
         <Form.Control
           id="description"
