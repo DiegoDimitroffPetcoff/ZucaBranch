@@ -21,7 +21,7 @@ const FormLogin = () => (
 
           let url = "https://zucaarqback.onrender.com/project";
           AxiosPost(url, formData);
-         // window.location.href = "../projectlist";
+       window.location.href = "../projectlist";
         }}
       >
         {({
