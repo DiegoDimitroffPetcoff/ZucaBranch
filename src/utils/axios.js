@@ -18,7 +18,7 @@ export async function AxiosPost(url, body) {
         "Content-Type": "multipart/form-data",
       },
     });
-    console.log(result);
+   window.location.href = "../projectlist";
   } catch (error) {
     console.log("HA SUCEDIDO UN ERROR:" + error);
   }
