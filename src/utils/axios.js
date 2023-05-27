@@ -12,11 +12,17 @@ export async function AxiosGetAll(url, body) {
 
 //function to post
 export async function AxiosPost(url, body) {
+  try {
+    
   let result = await axios.post(url, body, {
     headers: {
       "Content-Type": "multipart/form-data",
     },
   });console.log(result);
+    
+  } catch (error) {
+    console.log("HA SUCEDIDO UN ERROR:" + error);
+  }
 }
 
 export async function AxiosSearchById(url, id) {
