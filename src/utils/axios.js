@@ -12,11 +12,11 @@ export async function AxiosGetAll(url, body) {
 
 //function to post
 export async function AxiosPost(url, body) {
-  await axios.post(url, body, {
+  let result = await axios.post(url, body, {
     headers: {
       "Content-Type": "multipart/form-data",
     },
-  });
+  });console.log(result);
 }
 
 export async function AxiosSearchById(url, id) {
