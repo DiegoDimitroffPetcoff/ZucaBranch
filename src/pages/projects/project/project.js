@@ -12,7 +12,7 @@ try {
   console.log(id);
   let url = "https://zucaarqback.onrender.com/project/";
   AxiosDelete(url, id);
-  window.location.reload();
+ // window.location.reload();
 } catch (error) {
   console.log(error);
 }
