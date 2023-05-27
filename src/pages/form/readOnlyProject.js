@@ -19,10 +19,10 @@ const Edite = ({ description, img, title, id }) => {
     onSubmit: (values) => {
       const patchData = async () => {
         try {
-
+console.log(values);
           let url = "https://zucaarqback.onrender.com/project/"
           AxiosEdite(url, id, values)
-      window.location.href = "/projectlist";
+     // window.location.href = "/projectlist";
         } catch (error) {
           console.log(error);
         }
