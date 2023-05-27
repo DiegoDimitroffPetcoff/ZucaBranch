@@ -48,7 +48,7 @@ export async function AxiosDelete(url, id) {
 export async function AxiosEdite(url, id, data) {
   try {
     let response = await axios.patch(url + id, data);
-    window.location.reload();
+    window.location.href = "../projectlist"
     return response;
   } catch (error) {
     console.log(error);

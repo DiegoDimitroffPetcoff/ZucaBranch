@@ -9,7 +9,7 @@ import Image from "react-bootstrap/Image";
 import { useFormik } from "formik";
 
 const Edite = ({ description, img, title, id }) => {
- // const [project, setProject] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const formik = useFormik({
     initialValues: {
       name: title,
@@ -19,15 +19,19 @@ const Edite = ({ description, img, title, id }) => {
     onSubmit: (values) => {
       const patchData = async () => {
         try {
-console.log(values);
-          let url = "https://zucaarqback.onrender.com/project/"
-          AxiosEdite(url, id, values)
-     // window.location.href = "/projectlist";
+          
+          setIsLoading(true); // Inicia la carga
+          console.log("empieza la carga");
+          console.log(isLoading);
+          let url = "https://zucaarqback.onrender.com/project/";
+          AxiosEdite(url, id, values);
+          // window.location.href = "/projectlist";
         } catch (error) {
           console.log(error);
+        } finally {
+          setIsLoading(false); // Finaliza la carga
         }
       };
-
       patchData();
     },
   });
@@ -58,7 +62,7 @@ console.log(values);
             value={formik.values.name}
           />
         </h1>
-       
+
         <Image src={img} fluid />
         <Form.Control
           id="description"
@@ -68,12 +72,18 @@ console.log(values);
           value={formik.values.description}
         />
 
-        <Button variant="primary" type="submit">
-          Editar
-        </Button>
-        <Button variant="success" onClick={back}>
-          Cancelar
-        </Button>
+        {!isLoading ? (
+          <div>
+            <Button variant="primary" type="submit">
+              Aceptar
+            </Button>
+            <Button variant="success" onClick={back}>
+              Volver
+            </Button>
+          </div>
+        ) : (
+          "cargando"
+        )}
       </form>
     </div>
   );
