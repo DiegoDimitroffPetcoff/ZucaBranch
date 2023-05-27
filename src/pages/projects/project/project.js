@@ -8,9 +8,14 @@ export default function ProjectComponent({ description, img, title, id }) {
   let Log = useSelector((state) => state.loggedAction);
 
   function delteProject(id) {
-    let url = "https://zucaarqback.onrender.com/project/";
-    AxiosDelete(url, id);
-    window.location.reload();
+try {
+  console.log(id);
+  let url = "https://zucaarqback.onrender.com/project/";
+  AxiosDelete(url, id);
+  window.location.reload();
+} catch (error) {
+  console.log(error);
+}
   }
 
   function editeProject(id) {

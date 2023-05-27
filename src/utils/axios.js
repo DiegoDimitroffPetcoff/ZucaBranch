@@ -35,6 +35,7 @@ export async function AxiosSearchById(url, id) {
 
 export async function AxiosDelete(url, id) {
   try {
+    console.log(id);
     let response = await axios.delete(url + id);
     return response;
   } catch (error) {
