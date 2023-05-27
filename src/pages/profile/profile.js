@@ -21,7 +21,6 @@ export function Profile() {
 
   useEffect(() => {
     let url = "https://zucaarqback.onrender.com/profile";
-
     AxiosGetAll(url)
       .then((responseData) => {
         setData(responseData);

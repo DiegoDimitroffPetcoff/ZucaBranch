@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import { AxiosEdite } from "../../utils/axios";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
@@ -9,7 +9,7 @@ import Image from "react-bootstrap/Image";
 import { useFormik } from "formik";
 
 const Edite = ({ description, img, title, id }) => {
-  const [project, setProject] = useState([]);
+ // const [project, setProject] = useState([]);
   const formik = useFormik({
     initialValues: {
       name: title,
@@ -19,10 +19,8 @@ const Edite = ({ description, img, title, id }) => {
     onSubmit: (values) => {
       const patchData = async () => {
         try {
-          const response = await axios.patch(
-            "https://zucaarqback.onrender.com/project/" + id,
-            values
-          );
+          let url = "https://zucaarqback.onrender.com/project/"
+          AxiosEdite(url, id, values)
           window.location.href = "/projectlist";
         } catch (error) {
           console.log(error);

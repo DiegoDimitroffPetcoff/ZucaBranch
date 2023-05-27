@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import axios from "axios";
+import { AxiosSearchById } from "../../utils/axios";
 import "../../css/login.css";
 import Nav from "../nav";
 
@@ -9,30 +9,20 @@ import ReadOnlyProject from "./readOnlyProject";
 import queryString from "query-string";
 
 const EditeProject = () => {
-  const [project, setProject] = useState([]); 
-
+  const [project, setProject] = useState([]);
 
   useEffect(() => {
     const urlParams = queryString.parse(window.location.search);
     const id = urlParams.id;
+    let url = "https://zucaarqback.onrender.com/project/";
 
-    axios
-      .get("https://zucaarqback.onrender.com/project/" + id)
-
+    AxiosSearchById(url, id)
       .then((response) => {
         setProject(response.data);
       })
+      .catch((err) => {});
 
-      .catch((error) => {
-        console.log(error);
-      });
   }, []);
-
-
-  
-
-
-
 
   return (
     <div>

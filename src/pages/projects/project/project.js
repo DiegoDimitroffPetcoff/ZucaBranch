@@ -1,22 +1,16 @@
 import "./project.css";
-import axios from "axios";
+import { AxiosDelete } from "../../../utils/axios";
 import { useSelector } from "react-redux";
 
 import Button from "react-bootstrap/Button";
 
 export default function ProjectComponent({ description, img, title, id }) {
   let Log = useSelector((state) => state.loggedAction);
+
   function delteProject(id) {
-    console.log(id);
-    axios
-      .delete("https://zucaarqback.onrender.com/project/" + id)
-      .then((response) => {
-        console.log("objeto eliminardo");
-        window.location.reload();
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    let url = "https://zucaarqback.onrender.com/project/";
+    AxiosDelete(url, id);
+    window.location.reload();
   }
 
   function editeProject(id) {

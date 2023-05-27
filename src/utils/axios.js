@@ -1,5 +1,6 @@
 import axios from "axios";
 
+//Function to get all the content
 export async function AxiosGetAll(url, body) {
   try {
     const response = await axios.get(url);
@@ -9,6 +10,7 @@ export async function AxiosGetAll(url, body) {
   }
 }
 
+//function to post
 export async function AxiosPost(url, body) {
   await axios.post(url, body, {
     headers: {
@@ -17,15 +19,32 @@ export async function AxiosPost(url, body) {
   });
 }
 
-//todo falta probar el axios de delete y hacer el de edite
-export async function axiosDelete(id) {
-  await axios
-    .post("https://zucaarqback.onrender.com/project/" + id)
-    .then((response) => {
-      console.log("objeto eliminardo");
-      window.location.reload();
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+export async function AxiosSearchById(url, id) {
+  try {
+    let response = await axios.get(url + id);
+    return response;
+  } catch (error) {
+    return error;
+  }
+}
+
+export async function AxiosDelete(url, id) {
+  try {
+    let response = await axios.delete(url + id);
+    return response;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+}
+
+export async function AxiosEdite(url, id, data) {
+  try {
+    let response = await axios.patch(url + id, data);
+console.log(response);
+    return response;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
 }
