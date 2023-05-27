@@ -40,6 +40,9 @@ export function Nav() {
       navElement2.classList.toggle("showLogOut");
     }
   }
+  if (!log || userString === undefined) {
+    dispatch(DESLOGEARSE());
+  }
 
   return (
     <nav>
@@ -61,7 +64,8 @@ export function Nav() {
             <Link to="/">Contacto</Link>
           </li>
 
-          {!log ? null : (
+          {!log || userString === undefined  ? "" : (
+    
             <li>
               {" "}
               <button className="navLogIsOpen" onClick={toggleLogMenu}>
