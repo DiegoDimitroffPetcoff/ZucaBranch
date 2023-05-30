@@ -17,11 +17,16 @@ const FormLogin = () => (
           const formData = new FormData();
           formData.append("name", values.name);
           formData.append("description", values.description);
-          formData.append("file", values.file);
+          //    formData.append("file", values.file);
+
+          values.file.forEach((file, index) => {
+            formData.append(`file${index}`, file);
+          });
 
           let url = "https://zucaarqback.onrender.com/project";
+
           AxiosPost(url, formData);
-       
+          setSubmitting(false); // Actualizar el estado isSubmitting a false una vez finalizado el envío
         }}
       >
         {({
@@ -36,7 +41,7 @@ const FormLogin = () => (
         }) => (
           <Form encType="multipart/form-data" onSubmit={handleSubmit}>
             <div className="formContainer">
-              <input
+              <textarea
                 type="text"
                 name="name"
                 onChange={handleChange}
@@ -46,7 +51,7 @@ const FormLogin = () => (
                 placeholder="Titulo Del Projecto"
               />
 
-              <input
+              <textarea
                 type="text"
                 name="description"
                 onChange={handleChange}
@@ -61,29 +66,23 @@ const FormLogin = () => (
                 name="file"
                 className="fileButton"
                 onChange={(event) => {
-                  setFieldValue("file", event.currentTarget.files[0]);
+                  const files = Array.from(event.currentTarget.files);
+
+                  // setFieldValue("file", event.currentTarget.files[0]);
+                  setFieldValue("file", files);
                 }}
                 onBlur={handleBlur}
+                multiple
               />
               {errors.file && touched.file && errors.file}
 
-              <Button
-                className="loginButton"
-                type="submit"
-                to="/projectlist"
-                disabled={isSubmitting}
-              >
+              <Button className="loginButton" type="submit">
                 Subir Projecto
               </Button>
-              {isSubmitting ? (
+              {isSubmitting && (
                 <div className="spinner">
-                  <p className="isSubmitting">
-                    "Cargando Proyecto... Esto puede demorar unos segundos"
-                  </p>
                   <BarLoader color="#36d7b7" height={2} width={90} />
                 </div>
-              ) : (
-                ""
               )}
             </div>
           </Form>

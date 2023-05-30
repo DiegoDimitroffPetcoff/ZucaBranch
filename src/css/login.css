@@ -5,21 +5,22 @@
   justify-content: center;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   /* margin: 20% 5%; */
-  width: 50%;
-  height: 60vh;
+  width: 90%;
+ 
   margin: 30px auto;
 }
 form {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+  width: 100%;
 }
 
 .formContainer {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-
+width: 100%;
 }
 
 
@@ -33,24 +34,30 @@ form {
 }
 
 .titleForm {
-  width: 100%;
+  width: 90%;
   margin: 0 auto;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  font-size: 25px;
+  margin:  2% auto;
+
 }
 
 .description {
-  width: 100%;
+  margin:  2% auto;
+
+  width: 90%;
   height: 300px;
-  margin: 0 auto;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  overflow: overlay;
+  border-radius: 5px;
+  border: none;
+  font-size: 20px;
 }
 .isSubmitting {
   font-size: 10px;
     color: white;
     transition: 0.5s;
-    top: 20%;
-    left: 50%;
+    top: 27%;
+    left: 16%;
     transform: translate(-50%, -50%);
     position: relative;
 }
@@ -92,5 +99,10 @@ form {
     line-height: inherit;
     width: 90%;
     align-self: center;
+  }
+
+  .isSubmitting {
+top: 16px;
+    left: 48%;
   }
 }

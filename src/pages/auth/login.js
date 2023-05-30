@@ -13,7 +13,11 @@ import Nav from "../nav";
 
 import Cookies from "js-cookie";
 
-const Login = () => {
+const Login = () =>
+
+
+
+{
   const dispatch = useDispatch();
 
   return (
@@ -25,6 +29,7 @@ const Login = () => {
         <Formik
           initialValues={{ name: "", password: "" }}
           onSubmit={async (values, { setSubmitting }) => {
+
             let response = await axios.post(
               `https://backendlogin.onrender.com/login/`,
               {
@@ -35,9 +40,11 @@ const Login = () => {
 
             if (response.data !== "Username Or Password incorrect") {
               console.log("USUARIO LOGEADO");
-              Cookies.set("userLogged", JSON.stringify(response.data), { expires: 2 });
+              Cookies.set("userLogged", JSON.stringify(response.data), {
+                expires: 2,
+              });
               dispatch(LOGEARSE());
-           
+     
               window.location.href = "./dashboard";
             } else {
               console.log("no LOGEADO");
@@ -81,9 +88,6 @@ const Login = () => {
               </div>
               {isSubmitting ? (
                 <div className="spinner">
-                  <p className="isSubmitting">
-                    "Cargando... Esto puede demorar unos segundos"
-                  </p>
                   <BarLoader color="#36d7b7" height={2} width={90} />
                 </div>
               ) : (

@@ -64,7 +64,8 @@ const Edite = ({ description, img, title, id }) => {
         </h1>
 
         <Image src={img} fluid />
-        <Form.Control
+        <textarea
+        className="textProfileEdite"
           id="description"
           name="description"
           type="text"

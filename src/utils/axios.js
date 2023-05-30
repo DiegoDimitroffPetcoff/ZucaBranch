@@ -13,12 +13,12 @@ export async function AxiosGetAll(url, body) {
 //function to post
 export async function AxiosPost(url, body) {
   try {
-    let result = await axios.post(url, body, {
+    await axios.post(url, body, {
       headers: {
         "Content-Type": "multipart/form-data",
       },
     });
-    window.location.reload();
+    window.location.href = "/projectlist";
   } catch (error) {
     console.log("HA SUCEDIDO UN ERROR:" + error);
   }
@@ -34,10 +34,11 @@ export async function AxiosSearchById(url, id) {
 }
 
 export async function AxiosDelete(url, id) {
+
   try {
-    console.log(id);
+
     let response = await axios.delete(url + id);
-   window.location.reload();
+    window.location.reload();
     return response;
   } catch (error) {
     console.log(error);
@@ -48,7 +49,7 @@ export async function AxiosDelete(url, id) {
 export async function AxiosEdite(url, id, data) {
   try {
     let response = await axios.patch(url + id, data);
-    window.location.href = "../projectlist"
+    window.location.href = "../projectlist";
     return response;
   } catch (error) {
     console.log(error);

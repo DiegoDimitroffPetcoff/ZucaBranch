@@ -34,8 +34,9 @@ export function ProjectsList() {
             <ProjectComponent
               description={project.description}
               title={project.name}
-              img={project.image.url}
+              img={project.image}
               id={project._id}
+              key={project.name}
             />
           );
         })}

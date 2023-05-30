@@ -1,6 +1,7 @@
 import "./project.css";
 import { AxiosDelete } from "../../../utils/axios";
 import { useSelector } from "react-redux";
+import Carousel from "react-bootstrap/Carousel";
 
 import Button from "react-bootstrap/Button";
 
@@ -8,14 +9,13 @@ export default function ProjectComponent({ description, img, title, id }) {
   let Log = useSelector((state) => state.loggedAction);
 
   function delteProject(id) {
-try {
-  console.log(id);
-  let url = "https://zucaarqback.onrender.com/project/";
-  AxiosDelete(url, id);
+    try {
+      let url = "https://zucaarqback.onrender.com/project/";
 
-} catch (error) {
-  console.log(error);
-}
+      AxiosDelete(url, id);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   function editeProject(id) {
@@ -25,8 +25,21 @@ try {
   return (
     <div className="containerProject">
       <h1 className="title">{title}</h1>
-      <img className="imagenProject" src={img} alt="Project Description" />
-      <p className="description">{description}</p>
+      {/*  <img className="imagenProject" src={img} alt="Project Description" /*/}
+      <Carousel>
+        {Array.isArray(img) &&
+          img.map((image, index) => (
+            <Carousel.Item interval={9000} key={index}>
+              <img
+                className="imagenProject"
+                src={image.url}
+                alt={index}
+                onClick={() => window.open(image.url, "_blank")}
+              />
+            </Carousel.Item>
+          ))}
+      </Carousel>
+      <p className="descriptionProject">{description}</p>
 
       {Log ? (
         <div>
