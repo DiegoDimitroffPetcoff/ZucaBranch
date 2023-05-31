@@ -5,6 +5,7 @@
 .titleProfile{
   font-size: 40px;
 
+  font-family: 'Raleway', sans-serif;
 }
 
 .imagenProfile {
@@ -16,6 +17,8 @@
 
 
 .textProfile{
+  
+  font-family: 'Raleway', sans-serif;
   width: 100%;
   border-radius: 5px;
   border: none;

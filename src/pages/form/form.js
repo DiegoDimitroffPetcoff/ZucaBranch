@@ -9,24 +9,35 @@ import Button from "react-bootstrap/Button";
 const FormLogin = () => (
   <div>
     <Nav></Nav>
-    <div className="containerLogin">
+    <div className="containerForm">
       <h1>Subir Contenido /Proyecto</h1>
       <Formik
         initialValues={{ name: "", file: null, description: "" }}
         onSubmit={async (values, { setSubmitting }) => {
+          setSubmitting(true); //
           const formData = new FormData();
           formData.append("name", values.name);
           formData.append("description", values.description);
+
+          
           //    formData.append("file", values.file);
 
           values.file.forEach((file, index) => {
             formData.append(`file${index}`, file);
           });
 
-          let url = "https://zucaarqback.onrender.com/project";
+          let url2 = "https://zucaarqback.onrender.com/project/";
 
-          AxiosPost(url, formData);
-          setSubmitting(false); // Actualizar el estado isSubmitting a false una vez finalizado el envío
+          let url = "http://localhost:2000/project";
+
+          try {
+            await AxiosPost(url, formData);
+            setSubmitting(false); 
+            window.location.href = "/projectlist";
+          } catch (error) {
+            console.log("HA SUCEDIDO UN ERROR:" + error);
+            setSubmitting(false); 
+          }
         }}
       >
         {({
@@ -79,12 +90,12 @@ const FormLogin = () => (
               <Button className="loginButton" type="submit">
                 Subir Projecto
               </Button>
-              {isSubmitting && (
-                <div className="spinner">
-                  <BarLoader color="#36d7b7" height={2} width={90} />
-                </div>
-              )}
             </div>
+            {isSubmitting ? (
+              <div className="spinner">
+                <BarLoader color="#36d7b7" height={2} width={90} />
+              </div>
+            ) : null}
           </Form>
         )}
       </Formik>

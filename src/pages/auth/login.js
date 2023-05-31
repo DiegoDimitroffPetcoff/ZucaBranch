@@ -39,8 +39,7 @@ const Login = () =>
             );
 
             if (response.data !== "Username Or Password incorrect") {
-              console.log("USUARIO LOGEADO");
-              Cookies.set("userLogged", JSON.stringify(response.data), {
+                        Cookies.set("userLogged", JSON.stringify(response.data), {
                 expires: 2,
               });
               dispatch(LOGEARSE());

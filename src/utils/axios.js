@@ -12,13 +12,14 @@ export async function AxiosGetAll(url, body) {
 
 //function to post
 export async function AxiosPost(url, body) {
+  console.log(body);
   try {
     await axios.post(url, body, {
       headers: {
         "Content-Type": "multipart/form-data",
       },
     });
-    window.location.href = "/projectlist";
+   //
   } catch (error) {
     console.log("HA SUCEDIDO UN ERROR:" + error);
   }

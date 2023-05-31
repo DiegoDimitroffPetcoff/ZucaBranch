@@ -29,6 +29,7 @@ li a:hover {
 }
 
 li {
+  
   font-family: "Raleway", sans-serif;
   color: white;
   font-size: 25px;
@@ -106,10 +107,8 @@ a:visited {
 .showLogOut {
   display: block;
   transition: 0.5s;
-  color: #e9ecef;;
+  color: #e9ecef;
   margin: 0px;
-
-
 
   margin: auto;
 }
@@ -123,6 +122,7 @@ a:visited {
     width: 100%;
   }
 
+
   ul {
     display: flex;
     flex-direction: column;
@@ -134,7 +134,7 @@ a:visited {
     backdrop-filter: blur(8px); /* Aplica el desenfoque en el fondo */
     opacity: 0;
     transition: 0.3s;
-    visibility: hidden;
+    display: none;
   }
 
   li {
@@ -154,7 +154,7 @@ a:visited {
     width: auto;
     height: 100%;
     display: flex;
-
+    z-index: 21;
     align-self: end;
   }
 
@@ -166,6 +166,10 @@ a:visited {
     visibility: visible;
     transition: 0.3s;
     opacity: 1;
+    position: absolute;
+    width: 100%;
+
+    z-index: 20;
   }
   ul li:nth-child(4) {
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
