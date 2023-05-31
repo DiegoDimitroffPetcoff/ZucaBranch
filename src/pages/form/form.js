@@ -19,7 +19,6 @@ const FormLogin = () => (
           formData.append("name", values.name);
           formData.append("description", values.description);
 
-          
           //    formData.append("file", values.file);
 
           values.file.forEach((file, index) => {
@@ -32,11 +31,11 @@ const FormLogin = () => (
 
           try {
             await AxiosPost(url, formData);
-            setSubmitting(false); 
+            setSubmitting(false);
             window.location.href = "/projectlist";
           } catch (error) {
             console.log("HA SUCEDIDO UN ERROR:" + error);
-            setSubmitting(false); 
+            setSubmitting(false);
           }
         }}
       >
@@ -86,16 +85,18 @@ const FormLogin = () => (
                 multiple
               />
               {errors.file && touched.file && errors.file}
-
-              <Button className="loginButton" type="submit">
-                Subir Projecto
-              </Button>
+              {isSubmitting ? (
+                <div className="spinner">
+                
+                  <BarLoader color="#36d7b7" height={2} width={90} />
+                  <h1>CARGANDO... paciencia mi FLLLLaca</h1>
+                </div>
+              ) : (
+                <Button className="loginButton" type="submit">
+                  Subir Projecto
+                </Button>
+              )}
             </div>
-            {isSubmitting ? (
-              <div className="spinner">
-                <BarLoader color="#36d7b7" height={2} width={90} />
-              </div>
-            ) : null}
           </Form>
         )}
       </Formik>

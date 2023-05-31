@@ -8,6 +8,15 @@ import Button from "react-bootstrap/Button";
 export default function ProjectComponent({ description, img, title, id }) {
   let Log = useSelector((state) => state.loggedAction);
 
+  function showConfirmationDelete(id) {
+    const response = window.confirm(
+      "Estas seguro de que querer eliminar el Proyecto?"
+    );
+    if (response) {
+      delteProject(id);
+    }
+  }
+
   function delteProject(id) {
     try {
       let url = "https://zucaarqback.onrender.com/project/";
@@ -25,25 +34,38 @@ export default function ProjectComponent({ description, img, title, id }) {
   return (
     <div className="containerProject">
       <h1 className="title">{title}</h1>
-      <Carousel>
-        {Array.isArray(img) &&
+
+      {Array.isArray(img) &&
+        (img.length !== 1 ? (
+          <Carousel>
+            {img.map((image, index) => (
+              <Carousel.Item interval={9000} key={index}>
+                <img
+                  className="imagenProject"
+                  src={image.url}
+                  alt={index}
+                  onClick={() => window.open(image.url, "_blank")}
+                />
+              </Carousel.Item>
+            ))}
+          </Carousel>
+        ) : (
           img.map((image, index) => (
-            <Carousel.Item interval={9000} key={index}>
-              <img
-                className="imagenProject"
-                src={image.url}
-                alt={index}
-                onClick={() => window.open(image.url, "_blank")}
-              />
-            </Carousel.Item>
-          ))}
-      </Carousel>
+            <img
+              className="imagenProject"
+              src={image.url}
+              alt={index}
+              key={index}
+              onClick={() => window.open(image.url, "_blank")}
+            />
+          ))
+        ))}
 
       <p className="descriptionProject">{description}</p>
 
       {Log ? (
         <div>
-          <Button variant="danger" onClick={() => delteProject(id)}>
+          <Button variant="danger" onClick={() => showConfirmationDelete(id)}>
             ELIMINAR PUBLICACION
           </Button>{" "}
           <Button variant="success" onClick={() => editeProject(id)}>
