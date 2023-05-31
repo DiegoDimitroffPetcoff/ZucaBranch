@@ -3,8 +3,8 @@
 }
 
 .titleProfile{
-  font-size: 40px;
-
+  font-size: 50px;
+padding: 2%;
   font-family: 'Raleway', sans-serif;
 }
 
@@ -23,6 +23,7 @@
   border-radius: 5px;
   border: none;
   font-size: 20px;
+  padding: 3%;
 }
 .textProfileEdite{
   width: 100%;

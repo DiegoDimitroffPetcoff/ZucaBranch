@@ -57,7 +57,7 @@ export function Profile() {
         )}
       
       {Log && !Edit && data[0].title !== "Cargando.." ? (
-        <div>
+        <div className="ContainerButton">
           <Button variant="success" onClick={() => editeDescription()}>
             EDITAR PUBLICACION
           </Button>{" "}

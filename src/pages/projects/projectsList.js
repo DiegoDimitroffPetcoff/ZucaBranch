@@ -7,9 +7,9 @@ import { AxiosGetAll } from "../../utils/axios";
 export function ProjectsList() {
   const [data, setData] = useState([
     {
-      image: [{ url: "Cargando.." }],
-      description: "Cargando..",
-      name: "Cargando..",
+      image: "Cargando...",
+      description: "Cargando...",
+      name: "Cargando...",
     },
   ]);
 
