@@ -14,7 +14,6 @@ export function Profile() {
   const [data, setData] = useState([
     {
       image: [{ url: "Cargando.." }],
-      description: "Cargando..",
       title: "Cargando..",
     },
   ]);
@@ -57,7 +56,7 @@ export function Profile() {
           ></FormikEditeProfile>
         )}
       
-      {Log && !Edit ? (
+      {Log && !Edit && data[0].title !== "Cargando.." ? (
         <div>
           <Button variant="success" onClick={() => editeDescription()}>
             EDITAR PUBLICACION
