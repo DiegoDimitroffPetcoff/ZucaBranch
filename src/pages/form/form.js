@@ -25,7 +25,9 @@ const FormLogin = () => (
             formData.append(`file${index}`, file);
           });
 
-          let url = "https://zucaarqback.onrender.com/project/";
+          let url2 = "https://zucaarqback.onrender.com/project/";
+          let url = "http://localhost:2000/project/";
+      
 
 
           try {
@@ -88,7 +90,7 @@ const FormLogin = () => (
                 <div className="spinner">
                 
                   <BarLoader color="#36d7b7" height={2} width={90} />
-                  <h1>CARGANDO... paciencia mi FLLLLaca</h1>
+                  <h1>CARGANDO... </h1>
                 </div>
               ) : (
                 <Button className="loginButton" type="submit">

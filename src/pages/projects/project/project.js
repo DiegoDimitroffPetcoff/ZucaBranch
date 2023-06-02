@@ -20,6 +20,7 @@ export default function ProjectComponent({ description, img, title, id }) {
   function delteProject(id) {
     try {
       let url = "https://zucaarqback.onrender.com/project/";
+   
 
       AxiosDelete(url, id);
     } catch (error) {

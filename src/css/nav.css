@@ -165,7 +165,7 @@ a:visited {
   .show {
     display: flex;
     flex-direction: column-reverse;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     visibility: visible;
     transition: 0.3s;
