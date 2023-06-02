@@ -25,8 +25,8 @@ const FormLogin = () => (
             formData.append(`file${index}`, file);
           });
 
-          let url2 = "https://zucaarqback.onrender.com/project/";
-          let url = "http://localhost:2000/project/";
+          let url = "https://zucaarqback.onrender.com/project/";
+
       
 
 
