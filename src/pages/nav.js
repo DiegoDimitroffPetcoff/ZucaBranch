@@ -61,7 +61,7 @@ export function Nav() {
           </li>
 
           <li>
-            <Link to="/">Contacto</Link>
+            <Link to="/contact">Contacto</Link>
           </li>
 
           {!log || userString === undefined  ? "" : (

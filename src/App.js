@@ -12,6 +12,7 @@ import LoginTest from "./pages/auth/loginTest";
 import Dashboard from "./pages/form/dashboard";
 import EditeProject from "./pages/form/editeProject";
 import Profile from "./pages/profile/profile";
+import Contact from "./pages/contact/contact";
 
 import { useSelector } from "react-redux";
 
@@ -33,6 +34,7 @@ function App() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/test" element={<LoginTest />}></Route>
         <Route path="/profile" element={<Profile />}></Route>
+        <Route path="/contact" element={<Contact />}></Route>
 
         {!log ? "": <Route path="/login/form" element={<Form />}></Route>}
         {!log ? "" : <Route path="/Dashboard" element={<Dashboard />}></Route>}
