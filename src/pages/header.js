@@ -15,7 +15,7 @@ export function Header() {
       console.log(error);
     });
 
-    axios
+  axios
     .get("https://backendlogin.onrender.com", {})
     .then(function (response) {
       console.log(response.data);
@@ -23,9 +23,6 @@ export function Header() {
     .catch(function (error) {
       console.log(error);
     });
-    
-
-
 
   return (
     <div className="Main">
@@ -36,9 +33,9 @@ export function Header() {
           <h1>ARCHVIZ</h1>
         </div>
 
-        <Link to="/login/form" className="button">
+        {/*       <Link to="/login/form" className="button">
           Comenzar
-        </Link>
+        </Link>*/}
       </header>
     </div>
   );

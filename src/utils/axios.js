@@ -1,6 +1,6 @@
 import axios from "axios";
 
-//Function to get all the content
+
 export async function AxiosGetAll(url, body) {
   try {
     const response = await axios.get(url);
@@ -10,7 +10,7 @@ export async function AxiosGetAll(url, body) {
   }
 }
 
-//function to post
+
 export async function AxiosPost(url, body) {
   console.log(body);
   try {
@@ -40,6 +40,19 @@ export async function AxiosDelete(url, id) {
 
     let response = await axios.delete(url + id);
     window.location.reload();
+    return response;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+}
+
+export async function AxiosDeleteImage(url,id, data) {
+
+  try {
+
+    let response = await axios.patch(url + id, {data});
+   
     return response;
   } catch (error) {
     console.log(error);

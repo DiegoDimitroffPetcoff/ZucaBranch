@@ -13,8 +13,7 @@
 }
 
 .cardContact:hover {
-
-cursor: pointer;
+  cursor: pointer;
   box-shadow: 0 0 10px rgba(0, 0, 0);
   transition: 0.5s;
 }
@@ -25,9 +24,6 @@ cursor: pointer;
   font-family: "Raleway", sans-serif;
 }
 
-
-
-
 a {
   font-family: "Raleway", sans-serif;
   width: 100%;
@@ -36,6 +32,7 @@ a {
   font-size: 20px;
   padding: 3%;
   display: block;
+  font-size: 100%;
 }
 
 a.textContact {
@@ -47,15 +44,34 @@ a.textContact {
   font-size: 30px;
   padding: 3%;
   display: block;
-text-decoration: none;
-transition: 0.5s;
+  text-decoration: none;
+  transition: 0.5s;
 }
 a.textContact:hover {
   color: #adb5bd;
   transition: 0.5s;
 }
 
+p {
+  color: white;
+  font-family: "Raleway", sans-serif;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  font-size: 30px;
+  /* padding: 3%; */
+  display: block;
+  text-decoration: none;
+  transition: 0.5s;
+  padding: 3%;
+  text-align: center;
+  margin: 0;
+}
 
+p.textContact:hover {
+  color: #adb5bd;
+  transition: 0.5s;
+}
 
 .textContactEdite {
   width: 100%;

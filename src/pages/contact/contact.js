@@ -19,13 +19,11 @@ export function Contact() {
   const [Edit, setEdit] = useState(false);
   const [data, setData] = useState([
     {
-
-        "email": "Cargando...",
-        "adress": "Cargando...",
-        "facebook": "Cargando...",
-        "instagram": "Cargando...",
-        "cellphone": "Cargando...",
-   
+      email: "Cargando...",
+      adress: "Cargando...",
+      facebook: "Cargando...",
+      instagram: "Cargando...",
+      cellphone: "Cargando...",
     },
   ]);
 
@@ -54,43 +52,58 @@ export function Contact() {
           <h1 className="titleContact">Contactos</h1>
           <div className="cardContact">
             <a
-              href="mailto:destinatario@ejemplo.com"
+              href={"mailto:" + data[0].email}
               target="_blank"
-              className="textContact" rel="noreferrer"
-           
+              className="textContact"
+              rel="noreferrer"
             >
               <FaEnvelope /> {data[0].email}
             </a>
           </div>{" "}
           <div className="cardContact">
-            <a  href="http://google.com" className="textContact">
+            <p>
               <FaMapMarker /> {data[0].adress}
-            </a>
+            </p>
           </div>{" "}
           <div className="cardContact">
-            <a href="google.com"  className="textContact">
+            <a
+              href="https://www.facebook.com/elisa.zkuszmiruk"
+              target="_blank"
+              className="textContact"
+              rel="noreferrer"
+            >
               <FaFacebook /> {data[0].facebook}
             </a>
           </div>{" "}
           <div className="cardContact">
-            <a href="google.com"  className="textContact">
+            <a
+              href="https://www.instagram.com/z.uca_/"
+              target="_blank"
+              className="textContact"
+              rel="noreferrer"
+            >
               <FaInstagram /> {data[0].instagram}
             </a>
           </div>{" "}
           <div className="cardContact">
-            <a className="textContact" href="google.com" >
+            <a
+              className="textContact"
+              rel="noreferrer"
+              target="_blank"
+              href={"tel:" + data[0].cellphone}
+            >
               <FaPhone /> {data[0].cellphone}
             </a>
           </div>{" "}
         </div>
       ) : (
         <FormikEditeContact
-        id= {data[0]._id}
-        email={data[0].email}
-        adress={data[0].adress}
-        facebook={data[0].facebook}
-        instagram={data[0].instagram}
-        cellphone={data[0].cellphone} 
+          id={data[0]._id}
+          email={data[0].email}
+          adress={data[0].adress}
+          facebook={data[0].facebook}
+          instagram={data[0].instagram}
+          cellphone={data[0].cellphone}
         ></FormikEditeContact>
       )}
 

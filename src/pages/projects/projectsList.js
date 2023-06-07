@@ -5,6 +5,8 @@ import Nav from "../nav";
 import { AxiosGetAll } from "../../utils/axios";
 
 export function ProjectsList() {
+
+
   const [data, setData] = useState([
     {
       image: "Cargando...",
@@ -36,6 +38,7 @@ export function ProjectsList() {
               title={project.name}
               img={project.image}
               id={project._id}
+
               key={project.name}
             />
           );
