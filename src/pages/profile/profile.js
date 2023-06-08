@@ -43,7 +43,7 @@ export function Profile() {
             {" "}
             <h1 className="titleProfile">{data[0].title}</h1>
             <div className="cardProfile">
-              <Image className="imagenProfile" src={data[0].image?.url} fluid />
+     { /*        <Image className="imagenProfile" src={data[0].image?.url} fluid />*/}
               <p className="textProfile">{data[0].description}</p>
             </div>{" "}
           </div>
@@ -52,7 +52,7 @@ export function Profile() {
             description={data[0].description}
             title={data[0].title}
             id={data[0]._id}
-            img={data[0].image?.url}
+          //  img={data[0].image?.url}
           ></FormikEditeProfile>
         )}
       

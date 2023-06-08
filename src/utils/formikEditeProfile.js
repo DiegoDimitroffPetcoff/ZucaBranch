@@ -45,7 +45,7 @@ const FormikEditeProfile = ({ description, title, img, id }) => {
             value={values.title}
           />
           <div className="cardProfile">
-            <Image className="imagenProfile" src={img} fluid />
+{/*     <Image className="imagenProfile" src={img} fluid />*/}
             <textarea
               className="textProfileEdite"
               type="text"
