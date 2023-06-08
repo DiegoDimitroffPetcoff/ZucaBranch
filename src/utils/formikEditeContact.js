@@ -19,10 +19,13 @@ const FormikEditeContact = ({
   facebook,
   instagram,
   cellphone,
+  emailText,
+  adressText,
+  facebookText,
+  instagramText,
+  cellphoneText,
   id,
 }) => {
-
-
   return (
     <Formik
       initialValues={{
@@ -31,20 +34,30 @@ const FormikEditeContact = ({
         facebook: facebook,
         instagram: instagram,
         cellphone: cellphone,
-        id:id,
+        id: id,
+        emailText: emailText,
+        adressText: adressText,
+        facebookText: facebookText,
+        instagramText: instagramText,
+        cellphoneText: cellphoneText,
       }}
       onSubmit={async (values, { setSubmitting }) => {
-
         let edition = {
           email: values.email,
           adress: values.adress,
           facebook: values.facebook,
           instagram: values.instagram,
           cellphone: values.cellphone,
+          emailText: values.emailText,
+          adressText: values.adressText,
+          facebookText: values.facebookText,
+          instagramText: values.instagramText,
+          cellphoneText: values.cellphoneText,
         };
+        console.log(edition);
 
-        let url = "https://zucaarqback.onrender.com/contact";
-
+        let url = "https://zucaarqback.onrender.com/contact/";
+  
 
         await axios
           .patch(url + id, edition)
@@ -69,7 +82,34 @@ const FormikEditeContact = ({
         /* and other goodies */
       }) => (
         <Form onSubmit={handleSubmit}>
-        <h1> <FaEnvelope /> Email</h1>
+          <h1>
+            {" "}
+            <FaPhone />
+            Telefono (Visual en la Web)
+          </h1>
+          <Form.Control
+            type="number"
+            name="cellphone"
+            onChange={handleChange}
+            onBlur={handleBlur}
+            value={values.cellphone}
+          />
+          <h4>
+            {" "}
+            <FaPhone />
+            Telefono al que se enviara el mensaje
+          </h4>
+          <Form.Control
+            type="number"
+            name="cellphoneText"
+            onChange={handleChange}
+            onBlur={handleBlur}
+            value={values.cellphoneText}
+          />
+          <h1>
+            {" "}
+            <FaEnvelope /> Email (Visual en la Web)
+          </h1>
           <Form.Control
             type="text"
             name="email"
@@ -77,15 +117,23 @@ const FormikEditeContact = ({
             onBlur={handleBlur}
             value={values.email}
           />
-<h1> <FaMapMarker /> Direccion </h1>
+
+          <h4>
+            {" "}
+            <FaEnvelope /> Email Al que Se enviara el mensaje:
+          </h4>
           <Form.Control
             type="text"
-            name="adress"
+            name="emailText"
             onChange={handleChange}
             onBlur={handleBlur}
-            value={values.adress}
+            value={values.emailText}
           />
-<h1> <FaFacebook /> Facebook</h1>
+
+          <h1>
+            {" "}
+            <FaFacebook /> Facebook (Visual en la Web)
+          </h1>
           <Form.Control
             type="text"
             name="facebook"
@@ -93,7 +141,25 @@ const FormikEditeContact = ({
             onBlur={handleBlur}
             value={values.facebook}
           />
-<h1> <FaInstagram />Instagram</h1>
+
+          <h4>
+            {" "}
+            <FaFacebook /> Incorporar direccion de Facebook a la que el usuario
+            sera redireccionado
+          </h4>
+          <Form.Control
+            type="text"
+            name="facebookText"
+            onChange={handleChange}
+            onBlur={handleBlur}
+            value={values.facebookText}
+          />
+
+          <h1>
+            {" "}
+            <FaInstagram />
+            Instagram (Visual en la Web)
+          </h1>
           <Form.Control
             type="text"
             name="instagram"
@@ -101,14 +167,44 @@ const FormikEditeContact = ({
             onBlur={handleBlur}
             value={values.instagram}
           />
-<h1> <FaPhone />Telefono</h1>
+          <h4>
+            {" "}
+            <FaInstagram />
+            Incorporar direccion de Instagram a la que el usuario sera
+            redireccionado
+          </h4>
           <Form.Control
             type="text"
-            name="cellphone"
+            name="instagramText"
             onChange={handleChange}
             onBlur={handleBlur}
-            value={values.cellphone}
+            value={values.instagramText}
           />
+
+          <h1>
+            {" "}
+            <FaMapMarker /> Direccion (Visual en la Web){" "}
+          </h1>
+          <Form.Control
+            type="text"
+            name="adress"
+            onChange={handleChange}
+            onBlur={handleBlur}
+            value={values.adress}
+          />
+
+          {/*
+<h4>
+            {" "}
+            <FaMapMarker /> DireccionTTTT{" "}
+          </h4>
+          <Form.Control
+            type="text"
+            name="adressText"
+            onChange={handleChange}
+            onBlur={handleBlur}
+            value={values.adressText}
+          />*/}
 
           <div className="cardProfile">
             {isSubmitting ? (

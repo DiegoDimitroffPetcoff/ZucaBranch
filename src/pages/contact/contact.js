@@ -52,7 +52,17 @@ export function Contact() {
           <h1 className="titleContact">Contactos</h1>
           <div className="cardContact">
             <a
-              href={"mailto:" + data[0].email}
+              className="textContact"
+              rel="noreferrer"
+              target="_blank"
+              href={"tel:" + data[0].cellphoneText}
+            >
+              <FaPhone /> {data[0].cellphone}
+            </a>
+          </div>{" "}
+          <div className="cardContact">
+            <a
+              href={"mailto:" + data[0].emailText}
               target="_blank"
               className="textContact"
               rel="noreferrer"
@@ -61,13 +71,8 @@ export function Contact() {
             </a>
           </div>{" "}
           <div className="cardContact">
-            <p>
-              <FaMapMarker /> {data[0].adress}
-            </p>
-          </div>{" "}
-          <div className="cardContact">
             <a
-              href="https://www.facebook.com/elisa.zkuszmiruk"
+              href={data[0].facebookText}
               target="_blank"
               className="textContact"
               rel="noreferrer"
@@ -77,7 +82,7 @@ export function Contact() {
           </div>{" "}
           <div className="cardContact">
             <a
-              href="https://www.instagram.com/z.uca_/"
+              href={data[0].instagramText}
               target="_blank"
               className="textContact"
               rel="noreferrer"
@@ -86,14 +91,9 @@ export function Contact() {
             </a>
           </div>{" "}
           <div className="cardContact">
-            <a
-              className="textContact"
-              rel="noreferrer"
-              target="_blank"
-              href={"tel:" + data[0].cellphone}
-            >
-              <FaPhone /> {data[0].cellphone}
-            </a>
+            <p>
+              <FaMapMarker /> {data[0].adress}
+            </p>
           </div>{" "}
         </div>
       ) : (
@@ -104,6 +104,11 @@ export function Contact() {
           facebook={data[0].facebook}
           instagram={data[0].instagram}
           cellphone={data[0].cellphone}
+          emailText={data[0].emailText}
+          adressText={data[0].adressText}
+          facebookText={data[0].facebookText}
+          instagramText={data[0].instagramText}
+          cellphoneText={data[0].cellphoneText}
         ></FormikEditeContact>
       )}
 

@@ -67,6 +67,12 @@ p {
   text-align: center;
   margin: 0;
 }
+h4 {
+  color: #adb5bd;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 100%;
+}
 
 p.textContact:hover {
   color: #adb5bd;

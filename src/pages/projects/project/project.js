@@ -32,8 +32,8 @@ export default function ProjectComponent({ description, img, title, id }) {
 
   function deleteImage(selectedImages, id) {
     try {
-      let url2 = "https://zucaarqback.onrender.com/project/";
-      let url = "http://localhost:2000/image/";
+      let url = "https://zucaarqback.onrender.com/image/";
+  
 
       AxiosDeleteImage(url, id, selectedImages);
       window.location.reload();
