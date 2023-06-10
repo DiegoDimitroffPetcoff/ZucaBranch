@@ -49,7 +49,7 @@ export function Contact() {
 
       {!Edit ? (
         <div className="containerContact">
-          <h1 className="titleContact">Contactos</h1>
+   
           <div className="cardContact">
             <a
               className="textContact"

@@ -30,12 +30,12 @@ export default function ProjectComponent({ description, img, title, id }) {
     }
   }
 
-  function deleteImage(selectedImages, id) {
+  async function deleteImage(selectedImages, id) {
     try {
-      let url = "https://zucaarqback.onrender.com/image/";
-  
+      let url = "https://zucaarqback.onrender.com/image/"; 
 
-      AxiosDeleteImage(url, id, selectedImages);
+     
+      await AxiosDeleteImage(url, id, selectedImages)
       window.location.reload();
     } catch (error) {
       console.log(error);
@@ -48,14 +48,13 @@ export default function ProjectComponent({ description, img, title, id }) {
     );
     if (response) {
       deleteProject(id);
-      console.log(selectedImages);
+
     }
   }
 
   function deleteProject(id) {
     try {
-      let url2 = "https://zucaarqback.onrender.com/project/";
-      let url = "http://localhost:2000/project/";
+      let url = "https://zucaarqback.onrender.com/project/";  
       AxiosDelete(url, id);
     } catch (error) {
       console.log(error);

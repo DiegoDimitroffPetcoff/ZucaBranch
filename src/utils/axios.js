@@ -1,6 +1,5 @@
 import axios from "axios";
 
-
 export async function AxiosGetAll(url, body) {
   try {
     const response = await axios.get(url);
@@ -10,7 +9,6 @@ export async function AxiosGetAll(url, body) {
   }
 }
 
-
 export async function AxiosPost(url, body) {
   console.log(body);
   try {
@@ -19,7 +17,7 @@ export async function AxiosPost(url, body) {
         "Content-Type": "multipart/form-data",
       },
     });
-   //
+    //
   } catch (error) {
     console.log("HA SUCEDIDO UN ERROR:" + error);
   }
@@ -35,9 +33,7 @@ export async function AxiosSearchById(url, id) {
 }
 
 export async function AxiosDelete(url, id) {
-
   try {
-
     let response = await axios.delete(url + id);
     window.location.reload();
     return response;
@@ -47,12 +43,10 @@ export async function AxiosDelete(url, id) {
   }
 }
 
-export async function AxiosDeleteImage(url,id, data) {
-
+export async function AxiosDeleteImage(url, id, data) {
   try {
+    let response = await axios.patch(url + id, { data });
 
-    let response = await axios.patch(url + id, {data});
-   
     return response;
   } catch (error) {
     console.log(error);
