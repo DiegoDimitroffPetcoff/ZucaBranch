@@ -103,6 +103,7 @@ export default function ProjectComponent({ description, img, title, id }) {
                 onClick={() => window.open(image.url, "_blank")}
               />
              {Log ? <input
+             className="checkbox"
                 type="checkbox"
                 name={image}
                 checked={selectedImages.includes(image)}
