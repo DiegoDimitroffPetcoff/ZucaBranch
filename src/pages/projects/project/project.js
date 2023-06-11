@@ -54,7 +54,7 @@ export default function ProjectComponent({ description, img, title, id }) {
 
   function deleteProject(id) {
     try {
-      let url = "https://zucaback2.fly.dev/project"
+      let url = "https://zucaback2.fly.dev/project/"
      
       AxiosDelete(url, id);
     } catch (error) {
