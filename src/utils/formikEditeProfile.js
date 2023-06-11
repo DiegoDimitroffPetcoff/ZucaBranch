@@ -14,7 +14,7 @@ const FormikEditeProfile = ({ description, title, img, id }) => {
         let edition = { description: values.description, title: values.title };
 
         await axios
-          .patch("https://zucaarqback.onrender.com/profile/" + id, edition)
+          .patch("https://zucaback2.fly.dev/profile/" + id, edition)
 
           .then((response) => {
             window.location.href = "/profile";
