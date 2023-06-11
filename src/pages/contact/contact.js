@@ -28,7 +28,7 @@ export function Contact() {
   ]);
 
   useEffect(() => {
-    let url = "https://zucaarqback.onrender.com/contact";
+    let url = "https://zucaback2.fly.dev/contact";
 
     AxiosGetAll(url)
       .then((responseData) => {

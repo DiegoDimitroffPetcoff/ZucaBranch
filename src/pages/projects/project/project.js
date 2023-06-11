@@ -32,7 +32,7 @@ export default function ProjectComponent({ description, img, title, id }) {
 
   async function deleteImage(selectedImages, id) {
     try {
-      let url = "https://zucaarqback.onrender.com/image/"; 
+      let url = "https://zucaback2.fly.dev/image/"; 
 
      
       await AxiosDeleteImage(url, id, selectedImages)
@@ -54,7 +54,8 @@ export default function ProjectComponent({ description, img, title, id }) {
 
   function deleteProject(id) {
     try {
-      let url = "https://zucaarqback.onrender.com/project/";  
+      let url = "https://zucaback2.fly.dev/project"
+     
       AxiosDelete(url, id);
     } catch (error) {
       console.log(error);

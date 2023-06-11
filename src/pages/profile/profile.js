@@ -19,7 +19,7 @@ export function Profile() {
   ]);
 
   useEffect(() => {
-    let url = "https://zucaarqback.onrender.com/profile";
+    let url = "https://zucaback2.fly.dev/profile";
     AxiosGetAll(url)
       .then((responseData) => {
         setData(responseData);

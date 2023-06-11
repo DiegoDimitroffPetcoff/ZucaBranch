@@ -23,7 +23,7 @@ const Edite = ({ description, img, title, id }) => {
           setIsLoading(true); // Inicia la carga
           console.log("empieza la carga");
           console.log(isLoading);
-          let url = "https://zucaarqback.onrender.com/project/";
+          let url = "https://zucaback2.fly.dev/project/";
           AxiosEdite(url, id, values);
           // window.location.href = "/projectlist";
         } catch (error) {

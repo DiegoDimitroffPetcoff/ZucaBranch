@@ -16,7 +16,7 @@ export function ProjectsList() {
   ]);
 
   useEffect(() => {
-    let url = "https://zucaarqback.onrender.com/projects";
+    let url = "https://zucaback2.fly.dev/projects";
 
     AxiosGetAll(url)
       .then((responseData) => {

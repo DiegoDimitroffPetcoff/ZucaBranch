@@ -14,7 +14,7 @@ const EditeProject = () => {
   useEffect(() => {
     const urlParams = queryString.parse(window.location.search);
     const id = urlParams.id;
-    let url = "https://zucaarqback.onrender.com/project/";
+    let url = "https://zucaback2.fly.dev/project/";
 
     AxiosSearchById(url, id)
       .then((response) => {

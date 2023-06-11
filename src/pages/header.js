@@ -7,7 +7,7 @@ import Nav from "./nav";
 
 export function Header() {
   axios
-    .get("https://zucaarqback.onrender.com", {})
+    .get("https://zucaback2.fly.dev", {})
     .then(function (response) {
       console.log(response.data);
     })
